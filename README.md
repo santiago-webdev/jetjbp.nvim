@@ -13,5 +13,12 @@ plugins as of right now:
 - [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
+## Install
+If you decided that you want to try it out:
+```lua
+-- Using packer
+use 'santigo-zero/jetjbp.nvim' -- jetjbp.nvim
+```
+
 ## Inspired on
 [rose-pine](https://github.com/rose-pine/neovim)
