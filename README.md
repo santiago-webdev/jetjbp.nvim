@@ -2,7 +2,9 @@
 A basic colorscheme for neovim.
 
 # Preview
-[Neovim open](https://github.com/santigo-zero/tests/blob/master/Screenshot_20220910_190828.png)
+![Neovim
+open](https://github.com/santigo-zero/tests/blob/master/Screenshot_20220910_190828.png
+"Screenshot of neovim showing the jetjbp colorscheme")
 
 ## Supported plugins
 I created this colorscheme for personal use so it doesn't support that many
