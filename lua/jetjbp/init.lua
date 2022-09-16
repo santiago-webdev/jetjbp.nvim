@@ -1,7 +1,5 @@
 local jet = {}
 
-vim.fn.matchadd('ErrorMsg', '\\s\\+$') -- Extra whitespaces will be highlighted
-
 jet.jbp = {
    text = '#C6D0F5',
    subtext = '#A5ABD2',
