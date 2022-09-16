@@ -1,7 +1,7 @@
 # jetjbp.nvim
 A basic colorscheme for neovim.
 
-# Preview
+## Preview
 ![Neovim
 open](https://github.com/santigo-zero/tests/blob/master/Screenshot_20220910_190828.png
 "Screenshot of neovim showing the jetjbp colorscheme")
