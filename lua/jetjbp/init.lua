@@ -307,7 +307,7 @@ jet.h('LspMethod', { link = 'TSMethod' })
 jet.h('LspMacro', { link = 'TSConstMacro' })
 jet.h('LspKeyword', { link = 'TSKeyword' })
 jet.h('LspModifier', { link = 'TSModifier' })
-jet.h('LspComment', { link = 'TSComment' })
+-- jet.h('LspComment', { link = 'TSComment' })
 jet.h('LspString', { link = 'TSString' })
 jet.h('LspNumber', { link = 'TSNumber' })
 
