@@ -207,8 +207,6 @@ jet.h('TSTextReference', { fg = jet.jbp.red0 }) -- Help pages: Footnotes, text r
 jet.h('zshSubst', { fg = jet.jbp.red0 })
 jet.h('zshDeref', { fg = jet.jbp.red0 })
 
--- Markdown
-
 jet.h('Exception', { fg = jet.jbp.purple0 }) -- try, catch, throw
 jet.h('TSException', { link = 'Exception' }) -- Exception related keywords: `try`, `except`, `finally` in Python.
 
@@ -258,12 +256,12 @@ jet.h('TSComment', { link = 'Comment' }) -- Line comments and block comments.
 jet.h('SpecialChar', { link = 'Constant' }) -- Special character in a constant.
 jet.h('SpecialComment', { link = 'SpecialChar' }) -- Special things inside a comment.
 
--- Diagnostics
 jet.h('DiffAdd', { fg = jet.jbp.blue })
 jet.h('DiffChange', { fg = jet.jbp.green0 })
 jet.h('DiffDelete', { fg = jet.jbp.red0 })
 jet.h('DiffText', { fg = jet.jbp.text })
 
+-- Used by nvim-lspconfig and others
 jet.h('DiagnosticError', { fg = jet.jbp.red0 })
 jet.h('DiagnosticHint', { fg = jet.jbp.blue })
 jet.h('DiagnosticInfo', { fg = jet.jbp.purple0 })
@@ -279,14 +277,43 @@ jet.h('DiagnosticUnderlineHint', { undercurl = true, sp = jet.jbp.blue })
 jet.h('DiagnosticUnderlineInfo', { undercurl = true, sp = jet.jbp.purple0 })
 jet.h('DiagnosticUnderlineWarn', { undercurl = true, sp = jet.jbp.yellow })
 
-jet.h('GitSignsChange', { fg = jet.jbp.purple0 })
-jet.h('GitSignsAdd', { fg = jet.jbp.blue })
-jet.h('GitSignsDelete', { fg = jet.jbp.red1 })
-
 jet.h('LspReferenceRead', { fg = jet.jbp.orange1, bg = jet.jbp.bg_high }) -- When you call a function or use a method/class
 jet.h('LspReferenceText', { link = 'LspReferenceRead' })
 jet.h('LspReferenceWrite', { link = 'LspReferenceRead' })
 
+-- https://github.com/lewis6991/gitsigns.nvim
+jet.h('GitSignsChange', { fg = jet.jbp.purple0 })
+jet.h('GitSignsAdd', { fg = jet.jbp.blue })
+jet.h('GitSignsDelete', { fg = jet.jbp.red1 })
+
+-- https://github.com/lvimuser/lsp-inlayhints.nvim
 jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.subtext })
+
+-- https://github.com/theHamsta/nvim-semantic-tokens
+jet.h('LspNamespace', { link = 'TSNamespace' })
+jet.h('LspType', { fg = jet.jbp.green0 })
+jet.h('LspClass', { link = 'TSConstructor' })
+jet.h('LspEnum', { link = 'TSEnum' })
+jet.h('LspInterface', { link = 'TSInterface' })
+jet.h('LspStruct', { link = 'TSStruct' })
+jet.h('LspTypeParameter', { link = 'TSParameter' })
+jet.h('LspParameter', { link = 'TSParameter' })
+-- jet.h('LspVariable', { link = 'TSVariable' })
+jet.h('LspProperty', { link = 'TSProperty' })
+jet.h('LspEnumMember', { link = 'TSEnumMember' })
+jet.h('LspEvent', { link = 'TSEvent' })
+jet.h('LspFunction', { fg = jet.jbp.blue })
+jet.h('LspMethod', { link = 'TSMethod' })
+jet.h('LspMacro', { link = 'TSConstMacro' })
+jet.h('LspKeyword', { link = 'TSKeyword' })
+jet.h('LspModifier', { link = 'TSModifier' })
+jet.h('LspComment', { link = 'TSComment' })
+jet.h('LspString', { link = 'TSString' })
+jet.h('LspNumber', { link = 'TSNumber' })
+
+jet.h('LspRegexp', { link = 'TSStringRegex' })
+jet.h('LspOperator', { link = 'TSOperator' })
+jet.h('LspDecorator', { link = 'TSSymbol' })
+jet.h('LspDeprecated', { link = 'TSStrike' })
 
 return jet

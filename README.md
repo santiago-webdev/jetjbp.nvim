@@ -12,6 +12,7 @@ plugins as of right now:
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-semantic-tokens](https://github.com/theHamsta/nvim-semantic-tokens)
 
 ## Install
 If you decided that you want to try it out:
@@ -20,5 +21,5 @@ If you decided that you want to try it out:
 use 'santigo-zero/jetjbp.nvim' -- jetjbp.nvim
 ```
 
-## Inspired on
+## Inspired by
 [rose-pine](https://github.com/rose-pine/neovim)
