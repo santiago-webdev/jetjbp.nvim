@@ -102,7 +102,7 @@ jet.h('SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displa
 -- jet.h('TabLineFill', {}) -- TabLineFill	Tab pages line, where there are no labels.
 -- jet.h('TabLineSel', {}) -- Tab pages line, active tab page label.
 
-jet.h('Visual', { bg = jet.jbp.bg_high, fg = jet.jbp.subtext, nocombine = true }) -- Visual mode selection.
+jet.h('Visual', { bg = jet.jbp.bg_high, nocombine = true }) -- Visual mode selection.
 jet.h('VisualNOS', { link = 'Visual' }) -- Visual mode selection when vim is "Not Owning the Selection".
 
 jet.h('Whitespace', { fg = jet.jbp.fg_dim }) -- Listchars.
