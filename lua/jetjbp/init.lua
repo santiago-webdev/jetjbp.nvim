@@ -252,7 +252,8 @@ jet.h('Operator', { fg = jet.jbp.red0 }) -- "sizeof", "+", "*", etc.
 jet.h('TSOperator', { link = 'Operator' }) -- = or ==, Binary or unary operators: `+`, and also `->` and `*` in C.
 
 jet.h('Comment', { fg = jet.jbp.dimmed3, italic = true })
-jet.h('TSComment', { link = 'Comment' }) -- Line comments and block comments.
+jet.h('@comment', { link = 'Comment' }) -- Line comments and block comments.
+
 jet.h('SpecialChar', { link = 'Constant' }) -- Special character in a constant.
 jet.h('SpecialComment', { link = 'SpecialChar' }) -- Special things inside a comment.
 
