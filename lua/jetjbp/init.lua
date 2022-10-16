@@ -206,6 +206,10 @@ jet.h('TSTextReference', { fg = jet.jbp.red0 }) -- Help pages: Footnotes, text r
 -- Zsh
 jet.h('zshSubst', { fg = jet.jbp.red0 })
 jet.h('zshDeref', { fg = jet.jbp.red0 })
+jet.h('zshString', { link = 'String' })
+jet.h('zshShortDeref', { link = 'Constant' })
+jet.h('zshPreProc', { link = 'Comment' })
+jet.h('zshTypes', { link = 'zshKeyword' })
 
 jet.h('Exception', { fg = jet.jbp.purple0 }) -- try, catch, throw
 jet.h('TSException', { link = 'Exception' }) -- Exception related keywords: `try`, `except`, `finally` in Python.
