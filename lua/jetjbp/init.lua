@@ -33,7 +33,7 @@ function jet.h(name, T)
    vim.api.nvim_set_hl(0, name, T)
 end
 
-jet.h('ColorColumn', {})
+jet.h('ColorColumn', { bg = jet.jbp.bg_high })
 jet.h('Conceal', {})
 -- jet.h('Cursor', {}) -- Character under the cursor.
 -- jet.h('lCursor', {}) -- Character under the cursor when |language-mapping| is used (see 'guicursor').
@@ -53,8 +53,8 @@ jet.h('Folded', { bg = jet.jbp.bg_low, fg = jet.jbp.subtext }) -- Folded lines.
 jet.h('SignColumn', { bg = jet.jbp.bg_low }) -- Where linting and errors popup
 
 jet.h('LineNr', { bg = jet.jbp.bg_base, fg = jet.jbp.fg_dim }) -- Line number column, gutter.
-jet.h('LineNrAbove', { bg = jet.jbp.bg_base, fg = jet.jbp.fg_dim })
-jet.h('LineNrBelow', { bg = jet.jbp.bg_base, fg = jet.jbp.fg_dim })
+-- jet.h('LineNrAbove', { fg = jet.jbp.fg_dim, bg = jet.jbp.bg_med })
+-- jet.h('LineNrBelow', { fg = jet.jbp.fg_dim, bg = jet.jbp.bg_med })
 
 jet.h('MatchParen', { bg = jet.jbp.orange0 })
 
@@ -81,18 +81,23 @@ jet.h('IncSearch', { bg = jet.jbp.green0, fg = jet.jbp.bg_high }) -- Current sea
 jet.h('CurSearch', { bg = jet.jbp.blue, fg = jet.jbp.bg_high }) -- Current search match under the cursor
 jet.h('Substitute', { bg = jet.jbp.purple0, fg = jet.jbp.bg_base }) -- :substitute or :s///gc replacement text highlighting
 
-jet.h('StatusLine', { bg = jet.jbp.bg_low, fg = jet.jbp.text })
-jet.h('StatusLineBlue', { bg = jet.jbp.bg_low, fg = jet.jbp.blue })
-
-jet.h('StatusLineNC', { link = 'EndOfBuffer' })
--- WinBar WinBarNC
-
-jet.h('WinSeperator', { fg = 'red', bg = 'blue' }) -- Separators between window splits.
---    -- VertSplit = { bg = jet.jbp.bg_base, fg = jet.jbp.grey }, -- Used for splits, also used for completion menus
---    -- -- WinSeperator      = { bg = 'red' },
-
 jet.h('Special', { fg = jet.jbp.grey }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
 jet.h('SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace.
+jet.h('Visual', { bg = jet.jbp.bg_high, nocombine = true }) -- Visual mode selection.
+jet.h('VisualNOS', { link = 'Visual' }) -- Visual mode selection when vim is "Not Owning the Selection".
+
+jet.h('Whitespace', { fg = jet.jbp.fg_dim }) -- Listchars.
+jet.h('NonText', { fg = jet.jbp.dimmed2 }) -- Used in showbreak, listchars and virtualtext.
+
+jet.h('StatusLine', { bg = jet.jbp.bg_low, fg = jet.jbp.text })
+
+jet.h('VertSplit', { bg = jet.jbp.bg_base, fg = jet.jbp.grey }) -- Used for splits, also used for completion menus
+jet.h('WinSeperator', { link = 'VertSplit' }) -- Separators between window splits.
+
+-- jet.h('StatusLineBlue', { bg = jet.jbp.bg_low, fg = jet.jbp.blue })
+-- jet.h('StatusLineNC', { link = 'EndOfBuffer' })
+-- -- WinBar WinBarNC
+
 -- jet.h('SpellBad', { link = 'Special' }) -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 -- jet.h('SpellCap', { link = 'Special' }) -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 -- jet.h('SpellLocal', { link = 'Special' }) -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -101,12 +106,6 @@ jet.h('SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displa
 -- jet.h('TabLine', {}) -- Tab pages line, not active tab page label.
 -- jet.h('TabLineFill', {}) -- TabLineFill	Tab pages line, where there are no labels.
 -- jet.h('TabLineSel', {}) -- Tab pages line, active tab page label.
-
-jet.h('Visual', { bg = jet.jbp.bg_high, nocombine = true }) -- Visual mode selection.
-jet.h('VisualNOS', { link = 'Visual' }) -- Visual mode selection when vim is "Not Owning the Selection".
-
-jet.h('Whitespace', { fg = jet.jbp.fg_dim }) -- Listchars.
-jet.h('NonText', { fg = jet.jbp.dimmed2 }) -- Used in showbreak, listchars and virtualtext.
 
 -- jet.h('WildMenu', {}) -- Current match in 'wildmenu' completion.
 -- jet.h('WinBar', {}) -- Window bar of current window.
@@ -122,13 +121,14 @@ jet.h('@parameter.reference', { link = '@parameter' }) -- References to paramete
 jet.h('@preproc', { fg = jet.jbp.purple0 }) -- Preprocessor #if, #else, #endif, etc.
 
 jet.h('@field', { fg = jet.jbp.green0 }) -- Object and struct fields.
-jet.h('@property', { link = 'TSField' }) -- Same as `TSField`.
+jet.h('@property', { link = '@field' })
 
 jet.h('Float', { fg = jet.jbp.red0 }) -- A floating point constant: 2.3e10
 jet.h('@float', { link = 'Float' }) -- Floating-point number literals.
 
-jet.h('@punctuation.bracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
 jet.h('Delimiter', { fg = jet.jbp.green1 }) -- . and ,
+
+jet.h('@punctuation.bracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
 jet.h('@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
 jet.h('@punctuation.special', { link = 'Special' }) -- Special punctuation that doesn't fit into the previous categories.
 
@@ -166,6 +166,8 @@ jet.h('@number', { link = 'Number' }) -- Numeric literals that don't fit into ot
 
 jet.h('Constant', { fg = jet.jbp.red0 }) -- NOTE: to self, this changes the name in -> TODO(santigo-zero):
 jet.h('@constant', { fg = jet.jbp.red1 }) -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python and emmylua annotations in lua
+jet.h('@constant.builtin', { fg = jet.jbp.orange1 }) -- Built-in constant values: `nil` in Lua.
+jet.h('@constant.macro', { fg = jet.jbp.red0 }) -- Constants defined by macros: `NULL` in C.
 
 jet.h('Conditional', { fg = jet.jbp.purple0 }) -- if, then, else, endif, switch, etc.
 jet.h('@conditional', { link = 'Conditional' }) -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
@@ -178,8 +180,8 @@ jet.h('WarningMsg', { fg = jet.jbp.yellow }) -- Warning messages.
 jet.h('Todo', { fg = jet.jbp.purple0, bold = true })
 jet.h('@todo', { link = 'Todo' }) -- TODO.
 
-jet.h('@text.note', { fg = jet.jbp.blue, bold = true }) -- NOTE: INUPPERCASE: -- The italic = true affects TSTodo for some reason
-jet.h('@text.warning', { link = 'Todo' }) -- Text representation of a warning note. This affecs TSTodo hl group for some reason
+jet.h('@text.note', { fg = jet.jbp.blue, bold = true }) -- NOTE: INUPPERCASE: -- The italic = true affects @todo for some reason
+jet.h('@text.warning', { link = 'Todo' }) -- Text representation of a warning note. This affecs @todo hl group for some reason
 jet.h('@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a danger note.
 
 -- TODO:
@@ -211,48 +213,46 @@ jet.h('zshPreProc', { link = 'Comment' })
 jet.h('zshTypes', { link = 'zshKeyword' })
 
 jet.h('Exception', { fg = jet.jbp.purple0 }) -- try, catch, throw
-jet.h('TSException', { link = 'Exception' }) -- Exception related keywords: `try`, `except`, `finally` in Python.
+jet.h('@exception', { link = 'Exception' }) -- Exception related keywords: `try`, `except`, `finally` in Python.
 
 jet.h('Function', { fg = jet.jbp.purple0 }) -- Function name (also: methods for classes)
-jet.h('TSFunction', { link = 'Function' }) -- Function definitions.
+jet.h('@function', { link = 'Function' }) -- Function definitions.
+jet.h('@function.macro', { fg = jet.jbp.purple0 }) -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 
-jet.h('TSFunctionCall', { fg = jet.jbp.blue }) -- Function calls.
-jet.h('TSFuncBuiltin', { fg = jet.jbp.teal }) -- Built-in functions: `print` in Lua.
+jet.h('@function.call', { fg = jet.jbp.blue }) -- Function calls.
+jet.h('@function.builtin', { fg = jet.jbp.teal }) -- Built-in functions: `print` in Lua.
 
 jet.h('Include', { fg = jet.jbp.purple0 }) -- from ... import ...
-jet.h('TSInclude', { link = 'Include' }) -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
+jet.h('@include', { link = 'Include' }) -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
 
 jet.h('Keyword', { fg = jet.jbp.purple0 }) -- Any other keyword
-jet.h('TSKeyword', { link = 'Keyword' }) -- Keywords that don't fit into other categories.
-jet.h('TSKeywordFunction', { fg = jet.jbp.purple0, italic = true }) -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
-jet.h('TSKeywordOperator', { fg = jet.jbp.red0 }) -- Unary and binary operators that are English words: `and`, `or` in Python and Lua; `sizeof` in C.
-jet.h('TSKeywordReturn', { fg = jet.jbp.purple0 }) -- Keywords like `return` and `yield`.
+jet.h('@keyword', { link = 'Keyword' }) -- Keywords that don't fit into other categories.
+jet.h('@keyword.function', { fg = jet.jbp.purple0, italic = true }) -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
+jet.h('@keyword.operator', { fg = jet.jbp.red0 }) -- Unary and binary operators that are English words: `and`, `or` in Python and Lua; `sizeof` in C.
+jet.h('@keyword.return', { fg = jet.jbp.purple0 }) -- Keywords like `return` and `yield`.
 
 jet.h('Label', { fg = jet.jbp.green0 }) -- case, default, etc.
-jet.h('TSLabel', { link = 'Label' }) -- GOTO labels: `label:` in C, and `::label::` in Lua, and *thing* in help pages.
+jet.h('@label', { link = 'Label' }) -- GOTO labels: `label:` in C, and `::label::` in Lua, and *thing* in help pages.
 
 jet.h('Method', { fg = jet.jbp.blue })
-jet.h('TSMethod', { link = 'Method' }) -- Method definitions.
-jet.h('TSMethodCall', { fg = jet.jbp.blue }) -- Method calls.
+jet.h('@method', { link = 'Method' }) -- Method definitions.
+jet.h('@method.call', { fg = jet.jbp.blue }) -- Method calls.
 
 jet.h('Macro', { fg = jet.jbp.red0 })
-jet.h('TSConstBuiltin', { fg = jet.jbp.orange1 }) -- Built-in constant values: `nil` in Lua.
-jet.h('TSConstMacro', { fg = jet.jbp.red0 }) -- Constants defined by macros: `NULL` in C.
-jet.h('TSFuncMacro', { fg = jet.jbp.purple0 }) -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 
 -- Will override Special colors, so we just link to it since in most cases
 -- constructors calls and definitions start with a capital letter.
-jet.h('TSConstructor', { link = 'Special' }) -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
-jet.h('TSNamespace', { fg = jet.jbp.teal }) -- Identifiers referring to modules and namespaces.
-jet.h('TSNamespace', { fg = jet.jbp.teal }) -- Identifiers referring to modules and namespaces.
+jet.h('@constructor', { link = 'Special' }) -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
+jet.h('@namespace', { fg = jet.jbp.teal }) -- Identifiers referring to modules and namespaces.
 
 jet.h('Character', { fg = jet.jbp.red1 }) -- A character constant: 'c', '\n'
-jet.h('TSCharacter', { link = 'Character' }) -- Character literals: `'a'` in C and .
-jet.h('TSCharacterSpecial', { link = 'Special' }) -- Special characters.
+jet.h('@character', { link = 'Character' }) -- Character literals: `'a'` in C and .
+jet.h('@character.special', { link = 'Special' }) -- Special characters.
 
 jet.h('Statement', { fg = jet.jbp.red0 }) -- The = and == and any statement.
-jet.h('Operator', { fg = jet.jbp.red0 }) -- "sizeof", "+", "*", etc.
-jet.h('TSOperator', { link = 'Operator' }) -- = or ==, Binary or unary operators: `+`, and also `->` and `*` in C.
+
+jet.h('Operator', { fg = jet.jbp.red0 }) -- "sizeof", "+", "*"
+jet.h('@operator', { link = 'Operator' }) -- = or ==, Binary or unary operators: `+`, and also `->` and `*` in C.
 
 jet.h('Comment', { fg = jet.jbp.dimmed3, italic = true })
 jet.h('@comment', { link = 'Comment' }) -- Line comments and block comments.
@@ -294,30 +294,30 @@ jet.h('GitSignsDelete', { fg = jet.jbp.red1 })
 jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.subtext })
 
 -- https://github.com/theHamsta/nvim-semantic-tokens
-jet.h('LspNamespace', { link = 'TSNamespace' })
-jet.h('LspType', { fg = jet.jbp.green0 })
-jet.h('LspClass', { link = 'TSConstructor' })
-jet.h('LspEnum', { link = 'TSEnum' })
-jet.h('LspInterface', { link = 'TSInterface' })
-jet.h('LspStruct', { link = 'TSStruct' })
-jet.h('LspTypeParameter', { link = 'TSParameter' })
-jet.h('LspParameter', { link = 'TSParameter' })
--- jet.h('LspVariable', { link = 'TSVariable' })
-jet.h('LspProperty', { link = 'TSProperty' })
-jet.h('LspEnumMember', { link = 'TSEnumMember' })
-jet.h('LspEvent', { link = 'TSEvent' })
-jet.h('LspFunction', { fg = jet.jbp.blue })
-jet.h('LspMethod', { link = 'TSMethod' })
-jet.h('LspMacro', { link = 'TSConstMacro' })
-jet.h('LspKeyword', { link = 'TSKeyword' })
-jet.h('LspModifier', { link = 'TSModifier' })
--- jet.h('LspComment', { link = 'TSComment' })
+jet.h('LspClass', { link = '@type' }) -- @constant or @type or @constructor
+jet.h('LspComment', { link = '@comment' })
+jet.h('LspEnum', { link = '@constant' }) -- @constant or @type
+jet.h('LspEnumMember', { link = '@constant' }) -- @field or @property or @constant
+jet.h('LspEvent', { link = '@constant' })
+jet.h('LspFunction', { link = '@function' })
+jet.h('LspInterface', { link = '@constant' })
+jet.h('LspKeyword', { link = '@keyword' })
+jet.h('LspMacro', { link = '@constant.macro' })
+jet.h('LspMethod', { link = '@method' })
+-- jet.h('LspModifier', { link = 'TSModifier' })
+jet.h('LspNamespace', { link = '@namespace' })
+jet.h('LspNumber', { link = '@number' })
+jet.h('LspParameter', { link = '@parameter' })
+jet.h('LspProperty', { link = '@property' })
 jet.h('LspString', { link = '@string' })
-jet.h('LspNumber', { link = 'TSNumber' })
+jet.h('LspStruct', { link = '@constant' }) -- @structure or @constant
+jet.h('LspType', { link = '@type' })
+jet.h('LspTypeParameter', { link = '@type' })
+jet.h('LspVariable', { link = '@variable' })
 
-jet.h('LspRegexp', { link = 'TSStringRegex' })
-jet.h('LspOperator', { link = 'TSOperator' })
-jet.h('LspDecorator', { link = 'TSSymbol' })
-jet.h('LspDeprecated', { link = 'TSStrike' })
+jet.h('LspRegexp', { link = '@string.regex' })
+jet.h('LspOperator', { link = '@operator' })
+jet.h('LspDecorator', { link = '@symbol' })
+jet.h('LspDeprecated', { link = '@text.strike' })
 
 return jet
