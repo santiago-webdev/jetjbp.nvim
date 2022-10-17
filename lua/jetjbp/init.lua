@@ -83,20 +83,20 @@ jet.h('Substitute', { bg = jet.jbp.purple0, fg = jet.jbp.bg_base }) -- :substitu
 
 jet.h('Special', { fg = jet.jbp.grey }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
 jet.h('SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace.
+
 jet.h('Visual', { bg = jet.jbp.bg_high, nocombine = true }) -- Visual mode selection.
 jet.h('VisualNOS', { link = 'Visual' }) -- Visual mode selection when vim is "Not Owning the Selection".
 
 jet.h('Whitespace', { fg = jet.jbp.fg_dim }) -- Listchars.
 jet.h('NonText', { fg = jet.jbp.dimmed2 }) -- Used in showbreak, listchars and virtualtext.
 
-jet.h('StatusLine', { bg = jet.jbp.bg_low, fg = jet.jbp.text })
+jet.h('StatusLine', { bg = jet.jbp.bg_low, fg = jet.jbp.bg_low })
+jet.h('StatusLineBlue', { bg = jet.jbp.bg_low, fg = jet.jbp.blue })
+jet.h('StatusLineNC', { link = 'EndOfBuffer' })
+-- -- WinBar WinBarNC
 
 jet.h('VertSplit', { bg = jet.jbp.bg_base, fg = jet.jbp.grey }) -- Used for splits, also used for completion menus
 jet.h('WinSeperator', { link = 'VertSplit' }) -- Separators between window splits.
-
--- jet.h('StatusLineBlue', { bg = jet.jbp.bg_low, fg = jet.jbp.blue })
--- jet.h('StatusLineNC', { link = 'EndOfBuffer' })
--- -- WinBar WinBarNC
 
 -- jet.h('SpellBad', { link = 'Special' }) -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 -- jet.h('SpellCap', { link = 'Special' }) -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -145,6 +145,7 @@ jet.h('@type.definition', { fg = jet.jbp.blue }) -- Type definitions, e.g. `type
 jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `const` or `volatile` in C or `mut` in Rust.
 
 jet.h('Identifier', { fg = jet.jbp.dimmed1 }) -- (preferred) any variable name
+
 jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
 jet.h('@variable.builtin', { fg = jet.jbp.dimmed1 }) -- Variable names defined by the language: `this` or `self` in Javascript.
 
@@ -236,7 +237,7 @@ jet.h('@label', { link = 'Label' }) -- GOTO labels: `label:` in C, and `::label:
 
 jet.h('Method', { fg = jet.jbp.blue })
 jet.h('@method', { link = 'Method' }) -- Method definitions.
-jet.h('@method.call', { fg = jet.jbp.blue }) -- Method calls.
+jet.h('@method.call', { link = 'Method' }) -- Method calls.
 
 jet.h('Macro', { fg = jet.jbp.red0 })
 
