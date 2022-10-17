@@ -116,72 +116,71 @@ jet.h('Menu', { fg = jet.jbp.text }) -- Current font, background and foreground 
 jet.h('Scrollbar', { fg = jet.jbp.grey }) -- Current background and foreground of the main window's scrollbars.  Applicable highlight arguments: guibg, guifg.
 jet.h('Tooltip', { link = 'Menu' }) -- Current font, background and foreground of the tooltips.  Applicable highlight arguments: font, guibg, guifg.
 
-jet.h('TSParameter', { fg = jet.jbp.red1 }) -- Parameters of a function.
-jet.h('TSParameterReference', { link = 'TSParameter' }) -- References to parameters of a function. I don't know where this is applied
+jet.h('@parameter', { fg = jet.jbp.red1 }) -- Parameters of a function.
+jet.h('@parameter.reference', { link = '@parameter' }) -- References to parameters of a function. I don't know where this is applied
 
--- jet.h('TSPreProc', { fg = jet.jbp.purple0 }) -- Preprocessor #if, #else, #endif, etc.
+jet.h('@preproc', { fg = jet.jbp.purple0 }) -- Preprocessor #if, #else, #endif, etc.
 
-jet.h('TSField', { fg = jet.jbp.green0 }) -- Object and struct fields.
-jet.h('TSProperty', { link = 'TSField' }) -- Same as `TSField`.
+jet.h('@field', { fg = jet.jbp.green0 }) -- Object and struct fields.
+jet.h('@property', { link = 'TSField' }) -- Same as `TSField`.
 
 jet.h('Float', { fg = jet.jbp.red0 }) -- A floating point constant: 2.3e10
-jet.h('TSFloat', { link = 'Float' }) -- Floating-point number literals.
+jet.h('@float', { link = 'Float' }) -- Floating-point number literals.
 
-jet.h('TSPunctBracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
+jet.h('@punctuation.bracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
 jet.h('Delimiter', { fg = jet.jbp.green1 }) -- . and ,
-jet.h('TSPunctDelimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
-jet.h('TSPunctSpecial', { link = 'Special' }) -- Special punctuation that doesn't fit into the previous categories.
+jet.h('@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
+jet.h('@punctuation.special', { link = 'Special' }) -- Special punctuation that doesn't fit into the previous categories.
 
 jet.h('StorageClass', { fg = jet.jbp.orange0 })
-jet.h('TSStorageClass', { link = 'StorageClass' }) -- Keywords that affect
--- how a variable is stored: `static`, `comptime`, `extern`, etc. This
--- variable doesn't work
+jet.h('@storageclass', { link = 'StorageClass' }) -- Keywords that affect how a variable is stored: `static`, `comptime`, `extern`, etc. This variable doesn't work
 
 jet.h('Repeat', { fg = jet.jbp.purple0 }) -- for and while loops
-jet.h('TSRepeat', { link = 'Repeat' }) -- Keywords related to loops: `for`, `while`, etc.
+jet.h('@repeat', { link = 'Repeat' }) -- Keywords related to loops: `for`, `while`, etc.
 
 jet.h('Type', { fg = jet.jbp.blue }) -- (preferred) int, long, char, etcp.
-jet.h('TSType', { link = 'Type' }) -- Type (and class) definitions and annotations.
-jet.h('TSTypeBuiltin', { fg = jet.jbp.teal }) -- Built-in types: `i32` in Rust.
-jet.h('TSTypeDefinition', { fg = jet.jbp.blue }) -- Type definitions, e.g. `typedef` in C.
-jet.h('TSTypeQualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `const` or `volatile` in C or `mut` in Rust.
+jet.h('@type', { link = 'Type' }) -- Type (and class) definitions and annotations.
+jet.h('@type.builtin', { fg = jet.jbp.teal }) -- Built-in types: `i32` in Rust.
+jet.h('@type.definition', { fg = jet.jbp.blue }) -- Type definitions, e.g. `typedef` in C.
+jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `const` or `volatile` in C or `mut` in Rust.
 
 jet.h('Identifier', { fg = jet.jbp.dimmed1 }) -- (preferred) any variable name
-jet.h('TSVariable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
-jet.h('TSVariableBuiltin', { fg = jet.jbp.dimmed1 }) -- Variable names defined by the language: `this` or `self` in Javascript.
+jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
+jet.h('@variable.builtin', { fg = jet.jbp.dimmed1 }) -- Variable names defined by the language: `this` or `self` in Javascript.
 
-jet.h('TSAttribute', { fg = jet.jbp.red1 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
+jet.h('@attribute', { fg = jet.jbp.red1 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 
 jet.h('Boolean', { fg = jet.jbp.orange1 })
-jet.h('TSBoolean', { link = 'Boolean' }) -- Boolean literals: `True` and `False` in Python.
+jet.h('@boolean', { link = 'Boolean' }) -- Boolean literals: `True` and `False` in Python.
 
 jet.h('String', { fg = jet.jbp.yellow })
-jet.h('TSString', { link = 'String' }) -- String literals.
-jet.h('TSStringRegex', { fg = jet.jbp.orange1 }) -- Regular expression literals.
-jet.h('TSStringEscape', { fg = jet.jbp.orange1 }) -- Escape characters within a string: `\n`, `\t`, etc.
-jet.h('TSStringSpecial', { link = 'Special' }) -- Strings with special meaning that don't fit into the previous categories.
+jet.h('@string', { link = 'String' }) -- String literals.
+jet.h('@string.regex', { fg = jet.jbp.orange1 }) -- Regular expression literals.
+jet.h('@string.escape', { fg = jet.jbp.orange1 }) -- Escape characters within a string: `\n`, `\t`, etc.
+jet.h('@string.special', { link = 'Special' }) -- Strings with special meaning that don't fit into the previous categories.
 
--- jet.h('TSSymbol', {}) -- Identifiers referring to symbols or atoms.
+jet.h('@symbol', {}) -- Identifiers referring to symbols or atoms.
 
 jet.h('Number', { fg = jet.jbp.orange1 })
-jet.h('TSNumber', { link = 'Number' }) -- Numeric literals that don't fit into other categories.
+jet.h('@number', { link = 'Number' }) -- Numeric literals that don't fit into other categories.
 
 jet.h('Constant', { fg = jet.jbp.red0 }) -- NOTE: to self, this changes the name in -> TODO(santigo-zero):
-jet.h('TSConstant', { fg = jet.jbp.red1 }) -- Constants identifiers. These might not be semantically constant.
--- E.g. uppercase variables in Python and emmylua annotations in lua
+jet.h('@constant', { fg = jet.jbp.red1 }) -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python and emmylua annotations in lua
 
 jet.h('Conditional', { fg = jet.jbp.purple0 }) -- if, then, else, endif, switch, etc.
-jet.h('TSConditional', { link = 'Conditional' }) -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
+jet.h('@conditional', { link = 'Conditional' }) -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
 
 jet.h('Error', { fg = jet.jbp.red0 }) -- Any erroneous construct
 jet.h('ErrorMsg', { link = 'Error' }) -- Error messages in the cmdline
-jet.h('TSError', { link = 'ErrorMsg' }) -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
+jet.h('@error', { link = 'ErrorMsg' }) -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
 jet.h('WarningMsg', { fg = jet.jbp.yellow }) -- Warning messages.
+
 jet.h('Todo', { fg = jet.jbp.purple0, bold = true })
-jet.h('TSTodo', { link = 'Todo' }) -- TODO.
--- jet.h('TSWarning', { fg = 'purple' }) -- Text representation of a warning note. This affecs TSTodo hl group for some reason
-jet.h('TSDanger', { fg = jet.jbp.yellow, italic = true }) -- FIXME Text representation of a danger note.
-jet.h('TSNote', { fg = jet.jbp.blue, bold = true }) -- NOTE: INUPPERCASE: -- The italic = true affects TSTodo for some reason
+jet.h('@todo', { link = 'Todo' }) -- TODO.
+
+jet.h('@text.note', { fg = jet.jbp.blue, bold = true }) -- NOTE: INUPPERCASE: -- The italic = true affects TSTodo for some reason
+jet.h('@text.warning', { link = 'Todo' }) -- Text representation of a warning note. This affecs TSTodo hl group for some reason
+jet.h('@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a danger note.
 
 -- TODO:
 -- jet.h('TSDebug', {}) -- TODO(santigo-zero): Fix this, where it's being used I don't know. Debugging statements.
@@ -195,11 +194,11 @@ jet.h('TSNote', { fg = jet.jbp.blue, bold = true }) -- NOTE: INUPPERCASE: -- The
 -- jet.h('TSUnderline', {}) -- Text to be represented with an underline.
 -- jet.h('TSStrike', { link = 'Title' }) -- Strikethrough text.
 jet.h('Title', { fg = jet.jbp.purple0 }) -- Titles for output from ":set all", ":autocmd", also plugins use it for some windows.
-jet.h('TSTitle', { link = 'Title' }) -- Text that is part of a title.
+jet.h('@text.title', { link = 'Title' }) -- Text that is part of a title.
 -- jet.h('TSLiteral', {}) -- Literal or verbatim text.
 -- jet.h('TSURI', {}) -- URIs like hyperlinks or email addresses.
 -- jet.h('TSMath', {}) -- Math environments like LaTeX's `$ ... $`.
-jet.h('TSTextReference', { fg = jet.jbp.red0 }) -- Help pages: Footnotes, text references, citations, etc.
+jet.h('@text.reference', { fg = jet.jbp.red0 }) -- Help pages: Footnotes, text references, citations, etc.
 -- jet.h('TSEnvironment', {}) -- Text environments of markup languages.
 -- jet.h('TSEnvironmentName', {}) -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
 
@@ -313,7 +312,7 @@ jet.h('LspMacro', { link = 'TSConstMacro' })
 jet.h('LspKeyword', { link = 'TSKeyword' })
 jet.h('LspModifier', { link = 'TSModifier' })
 -- jet.h('LspComment', { link = 'TSComment' })
-jet.h('LspString', { link = 'TSString' })
+jet.h('LspString', { link = '@string' })
 jet.h('LspNumber', { link = 'TSNumber' })
 
 jet.h('LspRegexp', { link = 'TSStringRegex' })
