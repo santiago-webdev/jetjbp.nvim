@@ -296,7 +296,7 @@ jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.subtext })
 
 -- https://github.com/theHamsta/nvim-semantic-tokens
 jet.h('LspClass', { link = '@type' }) -- @constant or @type or @constructor
-jet.h('LspComment', { link = '@comment' })
+-- jet.h('LspComment', { link = '@comment' })
 jet.h('LspEnum', { link = '@constant' }) -- @constant or @type
 jet.h('LspEnumMember', { link = '@constant' }) -- @field or @property or @constant
 jet.h('LspEvent', { link = '@constant' })
