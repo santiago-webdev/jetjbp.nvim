@@ -1,6 +1,12 @@
 # jetjbp.nvim
 A basic colorscheme for neovim.
 
+## Suggestions
+If you have any suggestion feel free to open
+an [issue](https://github.com/santigo-zero/jetjbp.nvim/issues)
+or [discussion](https://github.com/santigo-zero/jetjbp.nvim/discussions)
+and we can talk about it.
+
 ## Preview
 ![Neovim
 open](https://github.com/santigo-zero/tests/blob/master/Screenshot_20220910_190828.png
