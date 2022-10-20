@@ -188,9 +188,9 @@ jet.h('@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a
 -- TODO:
 -- jet.h('TSDebug', {}) -- TODO(santigo-zero): Fix this, where it's being used I don't know. Debugging statements.
 -- jet.h('TSDefine', {}) -- Preprocessor #define statements.
--- jet.h('TSTag', {}) -- Tags like HTML tag names.
+jet.h('@tag', { fg = jet.jbp.purple0 }) -- Tags like HTML tag names.
 -- jet.h('TSTagAttribute', {}) -- HTML tag attributes.
--- jet.h('TSTagDelimiter', {}) -- Tag delimiters like `<` `>` `/`.
+jet.h('@tag.delimiter', { fg = jet.jbp.teal }) -- Tag delimiters like `<` `>` `/`.
 -- jet.h('TSText', {}) -- Non-structured text. Like text in a markup language.
 -- jet.h('TSStrong', {}) -- Text to be represented in bold.
 -- jet.h('TSEmphasis', {}) -- Text to be represented with emphasis.
@@ -221,7 +221,7 @@ jet.h('@function', { link = 'Function' }) -- Function definitions.
 jet.h('@function.macro', { fg = jet.jbp.purple0 }) -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 
 jet.h('@function.call', { fg = jet.jbp.blue }) -- Function calls.
-jet.h('@function.builtin', { link = '@function.call'}) -- Built-in functions: `print` in Lua.
+jet.h('@function.builtin', { link = '@function.call' }) -- Built-in functions: `print` in Lua.
 
 jet.h('Include', { fg = jet.jbp.purple0 }) -- from ... import ...
 jet.h('@include', { link = 'Include' }) -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
