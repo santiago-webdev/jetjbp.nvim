@@ -20,8 +20,7 @@ jet.jbp = {
    orange1 = '#FAB387',
    yellow = '#F6C177',
    bg_yellow = '#312718',
-   green0 = '#7ebdb6', -- Yes this is also goaway green
-   green1 = '#AABCA8', -- Goaway green
+   green0 = '#7ebdb6', -- goaway green
    teal = '#3e8fb0',
    blue = '#87B0F9',
    bg_blue = '#1b2332',
@@ -126,7 +125,7 @@ jet.h('@property', { link = '@field' })
 jet.h('Float', { fg = jet.jbp.red0 }) -- A floating point constant: 2.3e10
 jet.h('@float', { link = 'Float' }) -- Floating-point number literals.
 
-jet.h('Delimiter', { fg = jet.jbp.green1 }) -- . and ,
+jet.h('Delimiter', { fg = jet.jbp.green0 }) -- . and ,
 
 jet.h('@punctuation.bracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
 jet.h('@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
@@ -138,9 +137,9 @@ jet.h('@storageclass', { link = 'StorageClass' }) -- Keywords that affect how a 
 jet.h('Repeat', { fg = jet.jbp.purple0 }) -- for and while loops
 jet.h('@repeat', { link = 'Repeat' }) -- Keywords related to loops: `for`, `while`, etc.
 
-jet.h('Type', { fg = jet.jbp.blue }) -- (preferred) int, long, char, etcp.
+jet.h('Type', { fg = jet.jbp.teal }) -- (preferred) int, long, char, etcp.
 jet.h('@type', { link = 'Type' }) -- Type (and class) definitions and annotations.
-jet.h('@type.builtin', { fg = jet.jbp.teal }) -- Built-in types: `i32` in Rust.
+jet.h('@type.builtin', { link = 'Type' }) -- Built-in types: `i32` in Rust.
 jet.h('@type.definition', { fg = jet.jbp.blue }) -- Type definitions, e.g. `typedef` in C.
 jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `const` or `volatile` in C or `mut` in Rust.
 
@@ -221,7 +220,7 @@ jet.h('@function', { link = 'Function' }) -- Function definitions.
 jet.h('@function.macro', { fg = jet.jbp.purple0 }) -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 
 jet.h('@function.call', { fg = jet.jbp.blue }) -- Function calls.
-jet.h('@function.builtin', { fg = jet.jbp.teal }) -- Built-in functions: `print` in Lua.
+jet.h('@function.builtin', { link = '@function.call'}) -- Built-in functions: `print` in Lua.
 
 jet.h('Include', { fg = jet.jbp.purple0 }) -- from ... import ...
 jet.h('@include', { link = 'Include' }) -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
@@ -292,7 +291,7 @@ jet.h('GitSignsAdd', { fg = jet.jbp.blue })
 jet.h('GitSignsDelete', { fg = jet.jbp.red1 })
 
 -- https://github.com/lvimuser/lsp-inlayhints.nvim
-jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.subtext })
+jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.teal })
 
 -- https://github.com/theHamsta/nvim-semantic-tokens
 jet.h('LspClass', { link = '@type' }) -- @constant or @type or @constructor
