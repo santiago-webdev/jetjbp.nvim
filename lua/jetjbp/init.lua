@@ -2,6 +2,7 @@ local jet = {}
 
 jet.jbp = {
    text = '#C6D0F5',
+   plain = '#BAC3E9',
    subtext = '#A5ABD2',
    grey = '#8689B9',
    dimmed1 = '#74749C',
@@ -143,7 +144,7 @@ jet.h('@type.builtin', { link = 'Type' }) -- Built-in types: `i32` in Rust.
 jet.h('@type.definition', { fg = jet.jbp.blue }) -- Type definitions, e.g. `typedef` in C.
 jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `const` or `volatile` in C or `mut` in Rust.
 
-jet.h('Identifier', { fg = jet.jbp.dimmed1 }) -- (preferred) any variable name
+jet.h('Identifier', { fg = jet.jbp.plain }) -- (preferred) any variable name
 
 jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
 jet.h('@variable.builtin', { fg = jet.jbp.dimmed1 }) -- Variable names defined by the language: `this` or `self` in Javascript.
