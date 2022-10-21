@@ -51,8 +51,8 @@ jet.h('Folded', { bg = jet.jbp.bg_low, fg = jet.jbp.subtext }) -- Folded lines.
 jet.h('SignColumn', { bg = jet.jbp.bg_low }) -- Where linting and errors popup
 
 jet.h('LineNr', { bg = jet.jbp.bg_base, fg = jet.jbp.fg_dim }) -- Line number column, gutter.
--- jet.h('LineNrAbove', { fg = jet.jbp.fg_dim, bg = jet.jbp.bg_med })
--- jet.h('LineNrBelow', { fg = jet.jbp.fg_dim, bg = jet.jbp.bg_med })
+jet.h('LineNrAbove', { link = 'LineNr' })
+jet.h('LineNrBelow', { link = 'LineNr' })
 
 jet.h('MatchParen', { bg = jet.jbp.orange0 })
 
