@@ -1,31 +1,33 @@
 local jet = {}
 
+--stylua: ignore
 jet.jbp = {
-   text = '#C6D0F5',
-   plain = '#BAC3E9',
-   subtext = '#A5ABD2',
-   grey = '#8689B9',
-   dimmed1 = '#74749C',
-   dimmed2 = '#63618B',
-   dimmed3 = '#534F79', -- Used for comments, foldtext and identation/whitespaces spaces
-   fg_dim = '#3D3A56',
-   bg_high = '#26233A',
-   bg_med = '#1F1D2E',
-   bg_base = '#1A1724',
-   bg_low = '#15121D',
+   text       = '#C6D0F5',
+   plain      = '#BAC3E9',
+   subtext    = '#A5ABD2',
+   grey       = '#8689B9',
+   dimmed1    = '#74749C',
+   dimmed2    = '#63618B',
+   dimmed3    = '#534F79', -- Used for comments, foldtext and identation/whitespaces spaces
+   fg_dim     = '#3D3A56',
+   bg_high    = '#26233A',
+   bg_med     = '#1F1D2E',
+   bg_base    = '#1A1724',
+   bg_low     = '#15121D',
 
-   red0 = '#EB6F92',
-   bg_red0 = '#2f161d',
-   red1 = '#EBA0AC',
-   orange0 = '#FF9E64',
-   orange1 = '#FAB387',
-   yellow = '#F6C177',
-   bg_yellow = '#312718',
-   green0 = '#7ebdb6', -- goaway green
-   teal = '#3e8fb0',
-   blue = '#87B0F9',
-   bg_blue = '#1b2332',
-   purple0 = '#9D86B9',
+   red0       = '#EB6F92',
+   red1       = '#EBA0AC',
+   orange0    = '#FF9E64',
+   orange1    = '#FAB387',
+   yellow     = '#F6C177',
+   green0     = '#7ebdb6', -- goaway green
+   teal       = '#3e8fb0',
+   blue       = '#87B0F9',
+   purple0    = '#9D86B9',
+
+   bg_red0    = '#2f161d',
+   bg_yellow  = '#312718',
+   bg_blue    = '#1b2332',
    bg_purple0 = '#2f2837',
 }
 

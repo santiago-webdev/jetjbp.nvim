@@ -10,6 +10,15 @@ export default {
     }
   }
 }
+import { createApp } from 'vue'
+
+const app = createApp({
+  /* root component options */
+})
+
+import { createApp } from 'vue'
+// import the root component App from a single-file component.
+import App from './App.vue'
 </script>
 
 <template>
