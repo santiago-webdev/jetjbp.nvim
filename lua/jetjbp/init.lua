@@ -83,7 +83,7 @@ jet.h('IncSearch', { bg = jet.jbp.green0, fg = jet.jbp.bg_high }) -- Current sea
 jet.h('CurSearch', { bg = jet.jbp.blue, fg = jet.jbp.bg_high }) -- Current search match under the cursor
 jet.h('Substitute', { bg = jet.jbp.purple0, fg = jet.jbp.bg_base }) -- :substitute or :s///gc replacement text highlighting
 
-jet.h('Special', { fg = jet.jbp.grey }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
+jet.h('Special', { fg = jet.jbp.orange1 }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
 jet.h('SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace.
 
 jet.h('Visual', { bg = jet.jbp.bg_high, nocombine = true }) -- Visual mode selection.
@@ -149,7 +149,7 @@ jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `co
 jet.h('Identifier', { fg = jet.jbp.plain }) -- (preferred) any variable name
 
 jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
-jet.h('@variable.builtin', { fg = jet.jbp.dimmed1 }) -- Variable names defined by the language: `this` or `self` in Javascript.
+jet.h('@variable.builtin', { fg = jet.jbp.red1 }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
 
 jet.h('@attribute', { fg = jet.jbp.red1 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 

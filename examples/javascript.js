@@ -604,3 +604,11 @@ add(1, 8);
 const add = (firstNumber, secondNumber) => {
     return firstNumber + secondNumber;
 };
+
+Foo.prototype.doLater = function() {
+  var self = this; // current object
+
+  window.setTimeout(function() { self.doSomething(); }, 1000);
+}
+
+new Foo().doLater();
