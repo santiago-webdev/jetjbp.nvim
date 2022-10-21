@@ -37,12 +37,7 @@ end
 
 jet.h('ColorColumn', { bg = jet.jbp.bg_high })
 jet.h('Conceal', {})
--- jet.h('Cursor', {}) -- Character under the cursor.
--- jet.h('lCursor', {}) -- Character under the cursor when |language-mapping| is used (see 'guicursor').
--- jet.h('CursorIM', {}) -- Like Cursor, but used when in IME mode. |CursorIM|.
 jet.h('Directory', { fg = jet.jbp.blue }) -- Directories in NetRW.
--- jet.h('TermCursor', {}) -- Cursor in a focused terminal.
--- jet.h('TermCursorNC', {}) -- Cursor in a unfocused terminal.
 
 jet.h('CursorColumn', { bg = jet.jbp.bg_med })
 jet.h('CursorLine', { bg = jet.jbp.bg_med })
