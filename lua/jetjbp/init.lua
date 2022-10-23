@@ -289,7 +289,7 @@ jet.h('GitSignsAdd', { fg = jet.jbp.blue })
 jet.h('GitSignsDelete', { fg = jet.jbp.red1 })
 
 -- https://github.com/lvimuser/lsp-inlayhints.nvim
-jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.teal })
+jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.plain })
 
 -- https://github.com/theHamsta/nvim-semantic-tokens
 jet.h('LspClass', { link = '@type' }) -- @constant or @type or @constructor
