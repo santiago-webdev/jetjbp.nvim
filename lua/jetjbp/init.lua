@@ -24,12 +24,12 @@ jet.jbp = {
    teal       = '#3e8fb0',
    blue       = '#87B0F9',
    purple1    = '#9D86B9',
-   purple2   = '#AC90D8',
+   purple2    = '#AC90D8',
 
-   bg_red0    = '#2f161d',
+   bg_red1    = '#2f161d',
    bg_yellow  = '#312718',
    bg_blue    = '#1b2332',
-   bg_purple0 = '#2f2837',
+   bg_purple1 = '#2f2837',
 }
 
 function jet.h(name, T)
@@ -269,9 +269,9 @@ jet.h('DiagnosticHint', { fg = jet.jbp.blue })
 jet.h('DiagnosticInfo', { fg = jet.jbp.purple1 })
 jet.h('DiagnosticWarn', { fg = jet.jbp.yellow })
 
-jet.h('DiagnosticVirtualTextError', { bg = jet.jbp.bg_red0, fg = jet.jbp.red1 })
+jet.h('DiagnosticVirtualTextError', { bg = jet.jbp.bg_red1, fg = jet.jbp.red1 })
 jet.h('DiagnosticVirtualTextHint', { bg = jet.jbp.bg_blue, fg = jet.jbp.blue })
-jet.h('DiagnosticVirtualTextInfo', { bg = jet.jbp.bg_purple0, fg = jet.jbp.purple1 })
+jet.h('DiagnosticVirtualTextInfo', { bg = jet.jbp.bg_purple1, fg = jet.jbp.purple1 })
 jet.h('DiagnosticVirtualTextWarn', { bg = jet.jbp.bg_yellow, fg = jet.jbp.yellow })
 
 jet.h('DiagnosticUnderlineError', { undercurl = true, sp = jet.jbp.red1 })
