@@ -20,9 +20,10 @@ jet.jbp = {
    orange1    = '#FF9E64',
    orange2    = '#FAB387',
    yellow     = '#F6C177',
-   green1     = '#7ebdb6', -- goaway green
-   teal       = '#3e8fb0',
+   green1     = "#9ece6a", -- Yes I took this color from tokyonight.
+   green2     = '#7ebdb6', -- goaway green
    blue       = '#87B0F9',
+   teal       = '#3e8fb0',
    purple1    = '#9D86B9',
    purple2    = '#AC90D8',
 
@@ -75,7 +76,7 @@ jet.h('Question', { fg = jet.jbp.subtext }) -- |hit-enter| prompt and yes/no que
 jet.h('QuickFixLine', { bg = jet.jbp.orange2, fg = jet.jbp.bg_low, nocombine = true }) -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 
 jet.h('Search', { bg = jet.jbp.orange2, fg = jet.jbp.bg_high }) -- Last search patterns
-jet.h('IncSearch', { bg = jet.jbp.green1, fg = jet.jbp.bg_high }) -- Current search pattern when searching with / and with :s///
+jet.h('IncSearch', { bg = jet.jbp.green2, fg = jet.jbp.bg_high }) -- Current search pattern when searching with / and with :s///
 jet.h('CurSearch', { bg = jet.jbp.blue, fg = jet.jbp.bg_high }) -- Current search match under the cursor
 jet.h('Substitute', { bg = jet.jbp.purple1, fg = jet.jbp.bg_base }) -- :substitute or :s///gc replacement text highlighting
 
@@ -118,13 +119,13 @@ jet.h('@parameter.reference', { link = '@parameter' }) -- References to paramete
 
 jet.h('@preproc', { fg = jet.jbp.purple1 }) -- Preprocessor #if, #else, #endif, etc.
 
-jet.h('@field', { fg = jet.jbp.green1 }) -- Object and struct fields.
+jet.h('@field', { fg = jet.jbp.green2 }) -- Object and struct fields.
 jet.h('@property', { link = '@field' })
 
 jet.h('Float', { fg = jet.jbp.red1 }) -- A floating point constant: 2.3e10
 jet.h('@float', { link = 'Float' }) -- Floating-point number literals.
 
-jet.h('Delimiter', { fg = jet.jbp.green1 }) -- . and ,
+jet.h('Delimiter', { fg = jet.jbp.green2 }) -- . and ,
 
 jet.h('@punctuation.bracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
 jet.h('@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
@@ -229,7 +230,7 @@ jet.h('@keyword.function', { fg = jet.jbp.purple1, italic = true }) -- Keywords 
 jet.h('@keyword.operator', { fg = jet.jbp.red1 }) -- Unary and binary operators that are English words: `and`, `or` in Python and Lua; `sizeof` in C.
 jet.h('@keyword.return', { fg = jet.jbp.purple2 }) -- Keywords like `return` and `yield`.
 
-jet.h('Label', { fg = jet.jbp.green1 }) -- case, default, etc.
+jet.h('Label', { fg = jet.jbp.green2 }) -- case, default, etc.
 jet.h('@label', { link = 'Label' }) -- GOTO labels: `label:` in C, and `::label::` in Lua, and *thing* in help pages.
 
 jet.h('Method', { fg = jet.jbp.blue })
@@ -259,7 +260,7 @@ jet.h('SpecialChar', { link = 'Constant' }) -- Special character in a constant.
 jet.h('SpecialComment', { link = 'SpecialChar' }) -- Special things inside a comment.
 
 jet.h('DiffAdd', { fg = jet.jbp.blue })
-jet.h('DiffChange', { fg = jet.jbp.green1 })
+jet.h('DiffChange', { fg = jet.jbp.green2 })
 jet.h('DiffDelete', { fg = jet.jbp.red1 })
 jet.h('DiffText', { fg = jet.jbp.text })
 
