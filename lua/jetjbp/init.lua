@@ -180,7 +180,7 @@ jet.h('WarningMsg', { fg = jet.jbp.yellow }) -- Warning messages.
 jet.h('Todo', { fg = jet.jbp.purple1, bold = true })
 jet.h('@todo', { link = 'Todo' }) -- TODO.
 
-jet.h('@text.note', { fg = jet.jbp.blue, bold = true }) -- NOTE: INUPPERCASE: -- The italic = true affects @todo for some reason
+jet.h('@text.note', { fg = jet.jbp.blue }) -- NOTE: INUPPERCASE: -- The italic = true affects @todo for some reason
 jet.h('@text.warning', { link = 'Todo' }) -- Text representation of a warning note. This affecs @todo hl group for some reason
 jet.h('@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a danger note.
 
@@ -221,7 +221,7 @@ jet.h('@function.macro', { fg = jet.jbp.purple1 }) -- Macro defined functions (c
 jet.h('@function.call', { fg = jet.jbp.blue }) -- Function calls.
 jet.h('@function.builtin', { link = '@function.call' }) -- Built-in functions: `print` in Lua.
 
-jet.h('Include', { fg = jet.jbp.purple1 }) -- from ... import ...
+jet.h('Include', { fg = jet.jbp.blue }) -- from ... import ...
 jet.h('@include', { link = 'Include' }) -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
 
 jet.h('Keyword', { fg = jet.jbp.purple1 }) -- Any other keyword
@@ -241,7 +241,7 @@ jet.h('Macro', { fg = jet.jbp.red1 })
 
 -- Will override Special colors, so we just link to it since in most cases
 -- constructors calls and definitions start with a capital letter.
-jet.h('@constructor', { link = 'Special' }) -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
+jet.h('@constructor', { fg = jet.jbp.purple2 }) -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
 jet.h('@namespace', { fg = jet.jbp.teal }) -- Identifiers referring to modules and namespaces.
 
 jet.h('Character', { fg = jet.jbp.red2 }) -- A character constant: 'c', '\n'
