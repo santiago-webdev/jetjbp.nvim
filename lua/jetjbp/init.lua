@@ -17,8 +17,8 @@ jet.jbp = {
 
    red0       = '#EB6F92',
    red1       = '#EBA0AC',
-   orange0    = '#FF9E64',
-   orange1    = '#FAB387',
+   orange1    = '#FF9E64',
+   orange2    = '#FAB387',
    yellow     = '#F6C177',
    green0     = '#7ebdb6', -- goaway green
    teal       = '#3e8fb0',
@@ -54,7 +54,7 @@ jet.h('LineNr', { bg = jet.jbp.bg_base, fg = jet.jbp.fg_dim }) -- Line number co
 jet.h('LineNrAbove', { link = 'LineNr' })
 jet.h('LineNrBelow', { link = 'LineNr' })
 
-jet.h('MatchParen', { bg = jet.jbp.orange0 })
+jet.h('MatchParen', { bg = jet.jbp.orange1 })
 
 jet.h('ModeMsg', { fg = jet.jbp.subtext }) -- The 'showmode' message (e.g., '-- INSERT --') uses this.
 jet.h('MsgArea', { link = 'ModeMsg' }) -- Area for messages and cmdline, `/` and `:`.
@@ -72,14 +72,14 @@ jet.h('PmenuSbar', { bg = jet.jbp.bg_high, fg = jet.jbp.subtext }) -- Scrollbar
 jet.h('PmenuThumb', { bg = jet.jbp.grey }) -- Thumb of the scrollbar.
 
 jet.h('Question', { fg = jet.jbp.subtext }) -- |hit-enter| prompt and yes/no questions.
-jet.h('QuickFixLine', { bg = jet.jbp.orange1, fg = jet.jbp.bg_low, nocombine = true }) -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+jet.h('QuickFixLine', { bg = jet.jbp.orange2, fg = jet.jbp.bg_low, nocombine = true }) -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 
-jet.h('Search', { bg = jet.jbp.orange1, fg = jet.jbp.bg_high }) -- Last search patterns
+jet.h('Search', { bg = jet.jbp.orange2, fg = jet.jbp.bg_high }) -- Last search patterns
 jet.h('IncSearch', { bg = jet.jbp.green0, fg = jet.jbp.bg_high }) -- Current search pattern when searching with / and with :s///
 jet.h('CurSearch', { bg = jet.jbp.blue, fg = jet.jbp.bg_high }) -- Current search match under the cursor
 jet.h('Substitute', { bg = jet.jbp.purple1, fg = jet.jbp.bg_base }) -- :substitute or :s///gc replacement text highlighting
 
-jet.h('Special', { fg = jet.jbp.orange1 }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
+jet.h('Special', { fg = jet.jbp.orange2 }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
 jet.h('SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace.
 
 jet.h('Visual', { bg = jet.jbp.bg_high, nocombine = true }) -- Visual mode selection.
@@ -130,7 +130,7 @@ jet.h('@punctuation.bracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, 
 jet.h('@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
 jet.h('@punctuation.special', { link = 'Special' }) -- Special punctuation that doesn't fit into the previous categories.
 
-jet.h('StorageClass', { fg = jet.jbp.orange0 })
+jet.h('StorageClass', { fg = jet.jbp.orange1 })
 jet.h('@storageclass', { link = 'StorageClass' }) -- Keywords that affect how a variable is stored: `static`, `comptime`, `extern`, etc. This variable doesn't work
 
 jet.h('Repeat', { fg = jet.jbp.purple1 }) -- for and while loops
@@ -149,23 +149,23 @@ jet.h('@variable.builtin', { fg = jet.jbp.red1 }) -- Variable names defined by t
 
 jet.h('@attribute', { fg = jet.jbp.red1 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 
-jet.h('Boolean', { fg = jet.jbp.orange1 })
+jet.h('Boolean', { fg = jet.jbp.orange2 })
 jet.h('@boolean', { link = 'Boolean' }) -- Boolean literals: `True` and `False` in Python.
 
 jet.h('String', { fg = jet.jbp.yellow })
 jet.h('@string', { link = 'String' }) -- String literals.
-jet.h('@string.regex', { fg = jet.jbp.orange1 }) -- Regular expression literals.
-jet.h('@string.escape', { fg = jet.jbp.orange1 }) -- Escape characters within a string: `\n`, `\t`, etc.
+jet.h('@string.regex', { fg = jet.jbp.orange2 }) -- Regular expression literals.
+jet.h('@string.escape', { fg = jet.jbp.orange2 }) -- Escape characters within a string: `\n`, `\t`, etc.
 jet.h('@string.special', { link = 'Special' }) -- Strings with special meaning that don't fit into the previous categories.
 
 jet.h('@symbol', {}) -- Identifiers referring to symbols or atoms.
 
-jet.h('Number', { fg = jet.jbp.orange1 })
+jet.h('Number', { fg = jet.jbp.orange2 })
 jet.h('@number', { link = 'Number' }) -- Numeric literals that don't fit into other categories.
 
 jet.h('Constant', { fg = jet.jbp.red0 }) -- NOTE: to self, this changes the name in -> TODO(santigo-zero):
 jet.h('@constant', { fg = jet.jbp.red1 }) -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python and emmylua annotations in lua
-jet.h('@constant.builtin', { fg = jet.jbp.orange1 }) -- Built-in constant values: `nil` in Lua.
+jet.h('@constant.builtin', { fg = jet.jbp.orange2 }) -- Built-in constant values: `nil` in Lua.
 jet.h('@constant.macro', { fg = jet.jbp.red0 }) -- Constants defined by macros: `NULL` in C.
 
 jet.h('Conditional', { fg = jet.jbp.purple1 }) -- if, then, else, endif, switch, etc.
@@ -279,7 +279,7 @@ jet.h('DiagnosticUnderlineHint', { undercurl = true, sp = jet.jbp.blue })
 jet.h('DiagnosticUnderlineInfo', { undercurl = true, sp = jet.jbp.purple1 })
 jet.h('DiagnosticUnderlineWarn', { undercurl = true, sp = jet.jbp.yellow })
 
-jet.h('LspReferenceRead', { fg = jet.jbp.orange1, bg = jet.jbp.bg_high }) -- When you call a function or use a method/class
+jet.h('LspReferenceRead', { fg = jet.jbp.orange2, bg = jet.jbp.bg_high }) -- When you call a function or use a method/class
 jet.h('LspReferenceText', { link = 'LspReferenceRead' })
 jet.h('LspReferenceWrite', { link = 'LspReferenceRead' })
 
