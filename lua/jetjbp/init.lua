@@ -25,7 +25,7 @@ jet.jbp = {
    blue       = '#87B0F9',
    teal       = '#3e8fb0',
    purple1    = '#9D86B9',
-   purple2    = '#AC90D8',
+   purple2    = '#b094de',
 
    bg_red1    = '#2f161d',
    bg_yellow  = '#312718',
@@ -214,7 +214,7 @@ jet.h('zshTypes', { link = 'zshKeyword' })
 jet.h('Exception', { fg = jet.jbp.purple1 }) -- try, catch, throw
 jet.h('@exception', { link = 'Exception' }) -- Exception related keywords: `try`, `except`, `finally` in Python.
 
-jet.h('Function', { fg = jet.jbp.purple1 }) -- Function name (also: methods for classes)
+jet.h('Function', { fg = jet.jbp.purple2 }) -- Function name (also: methods for classes)
 jet.h('@function', { link = 'Function' }) -- Function definitions.
 jet.h('@function.macro', { fg = jet.jbp.purple1 }) -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 
