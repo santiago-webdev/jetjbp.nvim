@@ -147,6 +147,7 @@ jet.h('Identifier', { fg = jet.jbp.plain }) -- (preferred) any variable name
 
 jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
 jet.h('@variable.builtin', { fg = jet.jbp.red2 }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
+jet.h('@variable.builtin.python', { fg = jet.jbp.teal }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
 
 jet.h('@attribute', { fg = jet.jbp.red2 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 
@@ -219,7 +220,7 @@ jet.h('@function', { link = 'Function' }) -- Function definitions.
 jet.h('@function.macro', { fg = jet.jbp.purple1 }) -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 
 jet.h('@function.call', { fg = jet.jbp.blue }) -- Function calls.
-jet.h('@function.builtin', { link = '@function.call' }) -- Built-in functions: `print` in Lua.
+jet.h('@function.builtin', { fg = jet.jbp.purple2 }) -- Built-in functions: `print` in Lua.
 
 jet.h('Include', { fg = jet.jbp.blue }) -- from ... import ...
 jet.h('@include', { link = 'Include' }) -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
