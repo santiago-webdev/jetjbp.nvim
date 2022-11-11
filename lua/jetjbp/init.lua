@@ -249,7 +249,7 @@ jet.h('Character', { fg = jet.jbp.red2 }) -- A character constant: 'c', '\n'
 jet.h('@character', { link = 'Character' }) -- Character literals: `'a'` in C and .
 jet.h('@character.special', { link = 'Special' }) -- Special characters.
 
-jet.h('Statement', { fg = jet.jbp.red1 }) -- The = and == and any statement.
+jet.h('Statement', { fg = jet.jbp.purple1 }) -- The = and == and any statement.
 
 jet.h('Operator', { fg = jet.jbp.red1 }) -- "sizeof", "+", "*"
 jet.h('@operator', { link = 'Operator' }) -- = or ==, Binary or unary operators: `+`, and also `->` and `*` in C.
@@ -281,7 +281,7 @@ jet.h('DiagnosticUnderlineHint', { undercurl = true, sp = jet.jbp.blue })
 jet.h('DiagnosticUnderlineInfo', { undercurl = true, sp = jet.jbp.purple1 })
 jet.h('DiagnosticUnderlineWarn', { undercurl = true, sp = jet.jbp.yellow })
 
-jet.h('LspReferenceRead', { fg = jet.jbp.orange2, bg = jet.jbp.bg_high }) -- When you call a function or use a method/class
+jet.h('LspReferenceRead', { bg = jet.jbp.bg_high }) -- When you call a function or use a method/class
 jet.h('LspReferenceText', { link = 'LspReferenceRead' })
 jet.h('LspReferenceWrite', { link = 'LspReferenceRead' })
 
@@ -299,7 +299,7 @@ jet.h('LspClass', { link = '@type' }) -- @constant or @type or @constructor
 jet.h('LspEnum', { link = '@constant' }) -- @constant or @type
 jet.h('LspEnumMember', { link = '@constant' }) -- @field or @property or @constant
 jet.h('LspEvent', { link = '@constant' })
-jet.h('LspFunction', { link = '@function' })
+jet.h('LspFunction', { link = '@function.call' })
 jet.h('LspInterface', { link = '@constant' })
 jet.h('LspKeyword', { link = '@keyword' })
 jet.h('LspMacro', { link = '@constant.macro' })
