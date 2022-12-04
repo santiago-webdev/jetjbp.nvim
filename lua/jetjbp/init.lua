@@ -12,7 +12,8 @@ jet.jbp = {
    fg_dim     = '#43405f',
    bg_high    = '#26233A',
    bg_med     = '#1F1D2E',
-   bg_base    = '#1A1724',
+   -- bg_base    = '#1A1724',
+   bg_base    = '#1B1A27',
    bg_low     = '#15121D',
 
    red1       = '#EB6F92',
