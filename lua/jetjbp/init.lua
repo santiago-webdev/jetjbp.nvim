@@ -18,6 +18,7 @@ jet.jbp = {
 
    red1       = '#EB6F92',
    red2       = '#EBA0AC',
+   red3       = '#f38fa9',
    orange1    = '#FF9E64',
    orange2    = '#FAB387',
    yellow     = '#F6C177',
@@ -289,7 +290,7 @@ jet.h('LspReferenceWrite', { link = 'LspReferenceRead' })
 -- https://github.com/lewis6991/gitsigns.nvim
 jet.h('GitSignsChange', { fg = jet.jbp.purple1 })
 jet.h('GitSignsAdd', { fg = jet.jbp.blue })
-jet.h('GitSignsDelete', { fg = jet.jbp.red2 })
+jet.h('GitSignsDelete', { fg = jet.jbp.red3 })
 
 -- https://github.com/lvimuser/lsp-inlayhints.nvim
 jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.plain })
