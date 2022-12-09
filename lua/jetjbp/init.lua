@@ -17,14 +17,14 @@ jet.jbp = {
    bg_low     = '#15121D',
 
    red1       = '#EB6F92',
-   red2       = '#EBA0AC',
-   red3       = '#f38fa9',
+   red2       = '#f38fa9',
+   red3       = '#EBA0AC',
    orange1    = '#FF9E64',
    orange2    = '#FAB387',
    yellow     = '#F6C177',
    green1     = "#9ece6a", -- Yes I took this color from tokyonight.
    green2     = '#7ebdb6', -- goaway green
-   blue       = '#87B0F9',
+   blue       = '#7ba1e3',
    teal       = '#3e8fb0',
    purple1    = '#9D86B9',
    purple2    = '#b094de',
@@ -116,7 +116,7 @@ jet.h('Menu', { fg = jet.jbp.text }) -- Current font, background and foreground 
 jet.h('Scrollbar', { fg = jet.jbp.grey }) -- Current background and foreground of the main window's scrollbars.  Applicable highlight arguments: guibg, guifg.
 jet.h('Tooltip', { link = 'Menu' }) -- Current font, background and foreground of the tooltips.  Applicable highlight arguments: font, guibg, guifg.
 
-jet.h('@parameter', { fg = jet.jbp.red2 }) -- Parameters of a function.
+jet.h('@parameter', { fg = jet.jbp.red3 }) -- Parameters of a function.
 jet.h('@parameter.reference', { link = '@parameter' }) -- References to parameters of a function. I don't know where this is applied
 
 jet.h('@preproc', { fg = jet.jbp.purple1 }) -- Preprocessor #if, #else, #endif, etc.
@@ -130,6 +130,7 @@ jet.h('@float', { link = 'Float' }) -- Floating-point number literals.
 jet.h('Delimiter', { fg = jet.jbp.green2 }) -- . and ,
 
 jet.h('@punctuation.bracket', { fg = jet.jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
+jet.h('@punctuation.bracket.svelte', { fg = jet.jbp.red2 }) -- () Brackets, braces, parentheses, etc.
 jet.h('@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
 jet.h('@punctuation.special', { link = 'Special' }) -- Special punctuation that doesn't fit into the previous categories.
 
@@ -147,11 +148,13 @@ jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `co
 
 jet.h('Identifier', { fg = jet.jbp.plain }) -- (preferred) any variable name
 
+jet.h('@none', { undercurl = true })
 jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
-jet.h('@variable.builtin', { fg = jet.jbp.red2 }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
+
+jet.h('@variable.builtin', { fg = jet.jbp.red3 }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
 jet.h('@variable.builtin.python', { fg = jet.jbp.teal }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
 
-jet.h('@attribute', { fg = jet.jbp.red2 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
+jet.h('@attribute', { fg = jet.jbp.red3 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 
 jet.h('Boolean', { fg = jet.jbp.orange2 })
 jet.h('@boolean', { link = 'Boolean' }) -- Boolean literals: `True` and `False` in Python.
@@ -168,7 +171,7 @@ jet.h('Number', { fg = jet.jbp.orange2 })
 jet.h('@number', { link = 'Number' }) -- Numeric literals that don't fit into other categories.
 
 jet.h('Constant', { fg = jet.jbp.red1 }) -- NOTE: to self, this changes the name in -> TODO(santigo-zero):
-jet.h('@constant', { fg = jet.jbp.red2 }) -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python and emmylua annotations in lua
+jet.h('@constant', { fg = jet.jbp.red3 }) -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python and emmylua annotations in lua
 jet.h('@constant.builtin', { fg = jet.jbp.orange2 }) -- Built-in constant values: `nil` in Lua.
 jet.h('@constant.macro', { fg = jet.jbp.red1 }) -- Constants defined by macros: `NULL` in C.
 
@@ -183,6 +186,7 @@ jet.h('WarningMsg', { fg = jet.jbp.yellow }) -- Warning messages.
 jet.h('Todo', { fg = jet.jbp.purple1, bold = true })
 jet.h('@todo', { link = 'Todo' }) -- TODO.
 
+jet.h('@text', { fg = jet.jbp.text })
 jet.h('@text.note', { fg = jet.jbp.blue }) -- NOTE: INUPPERCASE: -- The italic = true affects @todo for some reason
 jet.h('@text.warning', { link = 'Todo' }) -- Text representation of a warning note. This affecs @todo hl group for some reason
 jet.h('@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a danger note.
@@ -190,14 +194,14 @@ jet.h('@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a
 -- jet.h('TSDebug', {}) -- TODO(santigo-zero): Fix this, where it's being used I don't know. Debugging statements.
 -- jet.h('TSDefine', {}) -- Preprocessor #define statements.
 jet.h('@tag', { fg = jet.jbp.purple1 }) -- Tags like HTML tag names.
--- jet.h('TSTagAttribute', {}) -- HTML tag attributes.
+jet.h('@tag.attribute', { fg = jet.jbp.green2 }) -- HTML tag attributes like classes and ids
 jet.h('@tag.delimiter', { fg = jet.jbp.teal }) -- Tag delimiters like `<` `>` `/`.
 -- jet.h('TSText', {}) -- Non-structured text. Like text in a markup language.
 -- jet.h('TSStrong', {}) -- Text to be represented in bold.
 -- jet.h('TSEmphasis', {}) -- Text to be represented with emphasis.
 -- jet.h('TSUnderline', {}) -- Text to be represented with an underline.
 -- jet.h('TSStrike', { link = 'Title' }) -- Strikethrough text.
-jet.h('Title', { fg = jet.jbp.purple1 }) -- Titles for output from ":set all", ":autocmd", also plugins use it for some windows.
+jet.h('Title', { fg = jet.jbp.orange1 }) -- Titles for output from ":set all", ":autocmd", also plugins use it for some windows.
 jet.h('@text.title', { link = 'Title' }) -- Text that is part of a title.
 -- jet.h('TSLiteral', {}) -- Literal or verbatim text.
 -- jet.h('TSURI', {}) -- URIs like hyperlinks or email addresses.
@@ -229,6 +233,7 @@ jet.h('@include', { link = 'Include' }) -- File or module inclusion keywords: `#
 
 jet.h('Keyword', { fg = jet.jbp.purple1 }) -- Any other keyword
 jet.h('@keyword', { link = 'Keyword' }) -- Keywords that don't fit into other categories.
+-- jet.h('@keyword.svelte', { fg = jet.jbp.red2 }) -- Keywords that don't fit into other categories.
 jet.h('@keyword.function', { fg = jet.jbp.purple1, italic = true }) -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
 jet.h('@keyword.operator', { fg = jet.jbp.red1 }) -- Unary and binary operators that are English words: `and`, `or` in Python and Lua; `sizeof` in C.
 jet.h('@keyword.return', { fg = jet.jbp.purple2 }) -- Keywords like `return` and `yield`.
@@ -247,7 +252,7 @@ jet.h('Macro', { fg = jet.jbp.red1 })
 jet.h('@constructor', { fg = jet.jbp.purple2 }) -- Constructor calls and definitions: `{}` in Lua, and Java constructors.
 jet.h('@namespace', { fg = jet.jbp.teal }) -- Identifiers referring to modules and namespaces.
 
-jet.h('Character', { fg = jet.jbp.red2 }) -- A character constant: 'c', '\n'
+jet.h('Character', { fg = jet.jbp.red3 }) -- A character constant: 'c', '\n'
 jet.h('@character', { link = 'Character' }) -- Character literals: `'a'` in C and .
 jet.h('@character.special', { link = 'Special' }) -- Special characters.
 
@@ -255,6 +260,7 @@ jet.h('Statement', { fg = jet.jbp.purple1 }) -- The = and == and any statement.
 
 jet.h('Operator', { fg = jet.jbp.red1 }) -- "sizeof", "+", "*"
 jet.h('@operator', { link = 'Operator' }) -- = or ==, Binary or unary operators: `+`, and also `->` and `*` in C.
+jet.h('@operator.svelte', { fg = jet.jbp.green2 })
 
 jet.h('Comment', { fg = jet.jbp.dimmed3, italic = true })
 jet.h('@comment', { link = 'Comment' }) -- Line comments and block comments.
@@ -290,7 +296,7 @@ jet.h('LspReferenceWrite', { link = 'LspReferenceRead' })
 -- https://github.com/lewis6991/gitsigns.nvim
 jet.h('GitSignsChange', { fg = jet.jbp.purple1 })
 jet.h('GitSignsAdd', { fg = jet.jbp.blue })
-jet.h('GitSignsDelete', { fg = jet.jbp.red3 })
+jet.h('GitSignsDelete', { fg = jet.jbp.red2 })
 
 -- https://github.com/lvimuser/lsp-inlayhints.nvim
 jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.plain })
