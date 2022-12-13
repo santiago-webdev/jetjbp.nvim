@@ -9,8 +9,10 @@ and we can talk about it.
 
 ## Preview
 ![Neovim
-open](https://github.com/santigo-zero/tests/blob/master/Screenshot_20220910_190828.png
-"Screenshot of neovim showing the jetjbp colorscheme")
+open](https://github.com/santigo-zero/tests/blob/master/Screenshot_20220910_190828.png "Screenshot of neovim showing the jetjbp colorscheme")
+_The font used in the screenshot is [Iosevka](https://typeof.net/Iosevka/) you
+can get the font with the icons seen in the screenshot from the nerd fonts repo
+[here](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Iosevka/Medium/complete/Iosevka%20Term%20Medium%20Nerd%20Font%20Complete.ttf)_
 
 ## Supported plugins
 I created this colorscheme for personal use so it doesn't support that many
