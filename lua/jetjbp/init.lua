@@ -5,7 +5,7 @@ jet.jbp = {
    text       = '#C6D0F5',
    plain      = '#BAC3E9',
    subtext    = '#A5ABD2',
-   grey       = '#8689B9',
+   steel      = '#8689B9',
    dimmed1    = '#74749C',
    dimmed2    = '#63618B',
    dimmed3    = '#534F79', -- Used for comments, foldtext and identation/whitespaces spaces
@@ -72,7 +72,7 @@ jet.h('EndOfBuffer', { bg = jet.jbp.bg_low }) -- Filler lines (~) after the end 
 jet.h('Pmenu', { bg = jet.jbp.bg_base, fg = jet.jbp.subtext }) -- The non-selected entries of a completion menu, normal item.
 jet.h('PmenuSel', { bg = jet.jbp.bg_high, fg = jet.jbp.subtext, blend = 0 }) -- Selected item.
 jet.h('PmenuSbar', { bg = jet.jbp.bg_high, fg = jet.jbp.subtext }) -- Scrollbar
-jet.h('PmenuThumb', { bg = jet.jbp.grey }) -- Thumb of the scrollbar.
+jet.h('PmenuThumb', { bg = jet.jbp.steel }) -- Thumb of the scrollbar.
 
 jet.h('Question', { fg = jet.jbp.subtext }) -- |hit-enter| prompt and yes/no questions.
 jet.h('QuickFixLine', { bg = jet.jbp.orange2, fg = jet.jbp.bg_low, nocombine = true }) -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
@@ -96,7 +96,7 @@ jet.h('StatusLineBlue', { bg = jet.jbp.bg_low, fg = jet.jbp.blue })
 jet.h('StatusLineNC', { link = 'EndOfBuffer' })
 -- -- WinBar WinBarNC
 
-jet.h('VertSplit', { bg = jet.jbp.bg_base, fg = jet.jbp.grey }) -- Used for splits, also used for completion menus
+jet.h('VertSplit', { bg = jet.jbp.bg_base, fg = jet.jbp.steel }) -- Used for splits, also used for completion menus
 jet.h('WinSeperator', { link = 'VertSplit' }) -- Separators between window splits.
 
 -- jet.h('SpellBad', { link = 'Special' }) -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
@@ -113,7 +113,7 @@ jet.h('WinSeperator', { link = 'VertSplit' }) -- Separators between window split
 -- jet.h('WinBarNC', {}) -- Window bar of not-current windows.
 
 jet.h('Menu', { fg = jet.jbp.text }) -- Current font, background and foreground colors of the menus.  Also used for the toolbar.  Applicable highlight arguments: font, guibg, guifg.
-jet.h('Scrollbar', { fg = jet.jbp.grey }) -- Current background and foreground of the main window's scrollbars.  Applicable highlight arguments: guibg, guifg.
+jet.h('Scrollbar', { fg = jet.jbp.steel }) -- Current background and foreground of the main window's scrollbars.  Applicable highlight arguments: guibg, guifg.
 jet.h('Tooltip', { link = 'Menu' }) -- Current font, background and foreground of the tooltips.  Applicable highlight arguments: font, guibg, guifg.
 
 jet.h('@parameter', { fg = jet.jbp.red3 }) -- Parameters of a function.
@@ -148,7 +148,7 @@ jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `co
 
 jet.h('Identifier', { fg = jet.jbp.plain }) -- (preferred) any variable name
 
-jet.h('@none', { undercurl = true })
+-- jet.h('@none', { undercurl = true })
 jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
 
 jet.h('@variable.builtin', { fg = jet.jbp.red3 }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
@@ -161,6 +161,7 @@ jet.h('@boolean', { link = 'Boolean' }) -- Boolean literals: `True` and `False` 
 
 jet.h('String', { fg = jet.jbp.yellow })
 jet.h('@string', { link = 'String' }) -- String literals.
+-- jet.h('@string.svelte', { link = 'Comment' }) -- String literals.
 jet.h('@string.regex', { fg = jet.jbp.orange2 }) -- Regular expression literals.
 jet.h('@string.escape', { fg = jet.jbp.orange2 }) -- Escape characters within a string: `\n`, `\t`, etc.
 jet.h('@string.special', { link = 'Special' }) -- Strings with special meaning that don't fit into the previous categories.
@@ -300,32 +301,5 @@ jet.h('GitSignsDelete', { fg = jet.jbp.red2 })
 
 -- https://github.com/lvimuser/lsp-inlayhints.nvim
 jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.plain })
-
--- https://github.com/theHamsta/nvim-semantic-tokens
-jet.h('LspClass', { link = '@type' }) -- @constant or @type or @constructor
--- jet.h('LspComment', { link = '@comment' })
-jet.h('LspEnum', { link = '@constant' }) -- @constant or @type
-jet.h('LspEnumMember', { link = '@constant' }) -- @field or @property or @constant
-jet.h('LspEvent', { link = '@constant' })
-jet.h('LspFunction', { link = '@function.call' })
-jet.h('LspInterface', { link = '@constant' })
-jet.h('LspKeyword', { link = '@keyword' })
-jet.h('LspMacro', { link = '@constant.macro' })
-jet.h('LspMethod', { link = '@method' })
--- jet.h('LspModifier', { link = 'TSModifier' })
-jet.h('LspNamespace', { link = '@namespace' })
-jet.h('LspNumber', { link = '@number' })
-jet.h('LspParameter', { link = '@parameter' })
-jet.h('LspProperty', { link = '@property' })
-jet.h('LspString', { link = '@string' })
-jet.h('LspStruct', { link = '@constant' }) -- @structure or @constant
-jet.h('LspType', { link = '@type' })
-jet.h('LspTypeParameter', { link = '@type' })
-jet.h('LspVariable', { link = '@variable' })
-
-jet.h('LspRegexp', { link = '@string.regex' })
-jet.h('LspOperator', { link = '@operator' })
-jet.h('LspDecorator', { link = '@symbol' })
-jet.h('LspDeprecated', { link = '@text.strike' })
 
 return jet
