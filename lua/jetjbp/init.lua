@@ -42,6 +42,7 @@ end
 jet.h('ColorColumn', { bg = jet.jbp.bg_high })
 jet.h('Conceal', {})
 jet.h('Directory', { fg = jet.jbp.blue }) -- Directories in NetRW.
+jet.h('netrwExe', { fg = jet.jbp.green2 }) -- Directories in NetRW.
 
 jet.h('CursorColumn', { bg = jet.jbp.bg_med })
 jet.h('CursorLine', { bg = jet.jbp.bg_med })
