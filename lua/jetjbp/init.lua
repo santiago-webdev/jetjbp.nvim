@@ -1,109 +1,134 @@
 local jet = {}
 
---stylua: ignore
 jet.jbp = {
-   text       = '#C6D0F5',
-   plain      = '#BAC3E9',
-   subtext    = '#A5ABD2',
-   steel      = '#8689B9',
-   dimmed1    = '#74749C',
-   dimmed2    = '#63618B',
-   dimmed3    = '#534F79', -- Used for comments, foldtext and identation/whitespaces spaces
-   fg_dim     = '#43405f',
-   bg_high    = '#26233A',
-   bg_med     = '#1F1D2E',
+   text = '#C6D0F5',
+   plain = '#BAC3E9',
+   subtext = '#A5ABD2',
+   steel = '#8689B9',
+   dimmed1 = '#74749C',
+   dimmed2 = '#63618B',
+   dimmed3 = '#534F79', -- Used for comments, foldtext and identation/whitespaces spaces
+   fg_dim = '#43405f',
+   bg_high = '#26233A',
+   bg_med = '#1F1D2E',
    -- bg_base    = '#1A1724',
-   bg_base    = '#1B1A27',
-   bg_low     = '#15121D',
+   bg_base = '#1B1A27',
+   bg_low = '#15121D',
 
-   red1       = '#EB6F92',
-   red2       = '#f38fa9',
-   red3       = '#EBA0AC',
-   orange1    = '#FF9E64',
-   orange2    = '#FAB387',
-   yellow     = '#F6C177',
-   green1     = "#9ece6a", -- Yes I took this color from tokyonight.
-   green2     = '#7ebdb6', -- goaway green
-   blue       = '#7ba1e3',
-   teal       = '#3e8fb0',
-   purple1    = '#9D86B9',
-   purple2    = '#b094de',
+   red1 = '#EB6F92',
+   red2 = '#f38fa9',
+   red3 = '#EBA0AC',
+   orange1 = '#FF9E64',
+   orange2 = '#FAB387',
+   yellow = '#F6C177',
+   green1 = '#9ece6a', -- Yes I took this color from tokyonight.
+   green2 = '#7ebdb6', -- goaway green
+   blue = '#7ba1e3',
+   teal = '#3e8fb0',
+   purple1 = '#9D86B9',
+   purple2 = '#b094de',
 
-   bg_red1    = '#2f161d',
-   bg_yellow  = '#312718',
-   bg_blue    = '#1b2332',
+   bg_red1 = '#2f161d',
+   bg_yellow = '#312718',
+   bg_blue = '#1b2332',
    bg_purple1 = '#2f2837',
+
+   clr_05 = '#16171c',
+   clr_10 = '#1f2027',
+   clr_15 = '#23252d',
+   clr_20 = '#282933',
+   clr_25 = '#2c2e39',
+   clr_30 = '#31323e',
+   clr_35 = '#333541',
+   clr_40 = '#353744',
+   clr_45 = '#3a3c4a',
+   clr_50 = '#3e404f',
+   clr_55 = '#434555',
+
+   clr_60 = '#4d4f64',
+   clr_65 = '#585a73',
+   clr_70 = '#636581',
+   clr_75 = '#6e7190',
+   clr_80 = '#7d7f9b',
+   clr_85 = '#8b8da6',
+   clr_90 = '#9a9bb1',
+   clr_95 = '#a8a9bc',
+
+   clr_100 = '#b7b8ea',
+   clr_150 = '#c0c0ec',
+   clr_200 = '#c8c9ed',
+   clr_250 = '#d1d2f0',
+   clr_300 = '#d9daf2',
 }
 
 function jet.h(name, T)
    vim.api.nvim_set_hl(0, name, T)
 end
 
-jet.h('ColorColumn', { bg = jet.jbp.bg_high })
+jet.h('ColorColumn', { bg = jet.jbp.clr_25 })
 jet.h('Conceal', {})
-jet.h('Directory', { fg = jet.jbp.blue }) -- Directories in NetRW.
-jet.h('netrwExe', { fg = jet.jbp.green2 }) -- Directories in NetRW.
+-- jet.h('Directory', { fg = jet.jbp.blue }) -- Directories in NetRW.
+-- jet.h('netrwExe', { fg = jet.jbp.green2 }) -- Directories in NetRW.
 
-jet.h('CursorColumn', { bg = jet.jbp.bg_med })
-jet.h('CursorLine', { bg = jet.jbp.bg_med })
-jet.h('CursorLineFold', { bg = jet.jbp.bg_med, fg = jet.jbp.fg_dim })
-jet.h('CursorLineNr', { bg = jet.jbp.bg_med, fg = jet.jbp.text }) -- Current position on gutter.
+jet.h('CursorColumn', { bg = jet.jbp.clr_35 })
+jet.h('CursorLine', { bg = jet.jbp.clr_35 })
+jet.h('CursorLineNr', { fg = jet.jbp.clr_300, bg = jet.jbp.clr_35 }) -- Current position on gutter.
 jet.h('CursorLineSign', { link = 'CursorLineNr' })
+jet.h('CursorLineFold', { bg = jet.jbp.clr_35 })
 
-jet.h('FoldColumn', { bg = jet.jbp.bg_base, fg = jet.jbp.fg_dim }) -- Column besides gutter.
-jet.h('Folded', { bg = jet.jbp.bg_low, fg = jet.jbp.subtext }) -- Folded lines.
-jet.h('SignColumn', { bg = jet.jbp.bg_low }) -- Where linting and errors popup
+jet.h('FoldColumn', { bg = jet.jbp.clr_25, fg = jet.jbp.clr_70 }) -- Column besides gutter.
+jet.h('Folded', { fg = jet.jbp.clr_05, bg = jet.jbp.clr_100 }) -- Folded lines.
+jet.h('SignColumn', { bg = jet.jbp.clr_20 }) -- Where linting and errors popup
 
-jet.h('LineNr', { bg = jet.jbp.bg_base, fg = jet.jbp.fg_dim }) -- Line number column, gutter.
+jet.h('LineNr', { fg = jet.jbp.clr_65 }) -- Line number column, gutter.
 jet.h('LineNrAbove', { link = 'LineNr' })
 jet.h('LineNrBelow', { link = 'LineNr' })
 
 jet.h('MatchParen', { bg = jet.jbp.orange1 })
 
-jet.h('ModeMsg', { fg = jet.jbp.subtext }) -- The 'showmode' message (e.g., '-- INSERT --') uses this.
+jet.h('ModeMsg', { fg = jet.jbp.clr_90 }) -- The 'showmode' message (e.g., '-- INSERT --') uses this.
 jet.h('MsgArea', { link = 'ModeMsg' }) -- Area for messages and cmdline, `/` and `:`.
 jet.h('MsgSeparator', { link = 'ModeMsg' })
 jet.h('MoreMsg', { link = 'ModeMsg' }) -- |more-prompt|
 
-jet.h('Normal', { bg = jet.jbp.bg_base })
+jet.h('Normal', { bg = jet.jbp.clr_20 })
 jet.h('NormalFloat', { link = 'Normal' })
-jet.h('NormalNC', { bg = jet.jbp.bg_low })
-jet.h('EndOfBuffer', { bg = jet.jbp.bg_low }) -- Filler lines (~) after the end of the buffer.
+jet.h('NormalNC', { bg = jet.jbp.clr_20 })
+jet.h('EndOfBuffer', { bg = jet.jbp.clr_20 }) -- Filler lines (~) after the end of the buffer.
 
-jet.h('Pmenu', { bg = jet.jbp.bg_base, fg = jet.jbp.subtext }) -- The non-selected entries of a completion menu, normal item.
-jet.h('PmenuSel', { bg = jet.jbp.bg_high, fg = jet.jbp.subtext, blend = 0 }) -- Selected item.
-jet.h('PmenuSbar', { bg = jet.jbp.bg_high, fg = jet.jbp.subtext }) -- Scrollbar
-jet.h('PmenuThumb', { bg = jet.jbp.steel }) -- Thumb of the scrollbar.
+jet.h('Pmenu', { bg = jet.jbp.clr_40, fg = jet.jbp.clr_95 }) -- The non-selected entries of a completion menu, normal item.
+jet.h('PmenuSel', { bg = jet.jbp.clr_55, fg = jet.jbp.clr_300, blend = 0 }) -- Selected item.
+jet.h('PmenuSbar', { bg = jet.jbp.clr_50 }) -- Scrollbar
+jet.h('PmenuThumb', { bg = jet.jbp.clr_80 }) -- Thumb of the scrollbar.
 
-jet.h('Question', { fg = jet.jbp.subtext }) -- |hit-enter| prompt and yes/no questions.
-jet.h('QuickFixLine', { bg = jet.jbp.orange2, fg = jet.jbp.bg_low, nocombine = true }) -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+jet.h('Question', { fg = jet.jbp.clr_95 }) -- |hit-enter| prompt and yes/no questions.
+jet.h('QuickFixLine', { bg = jet.jbp.orange2, fg = jet.jbp.clr_95, nocombine = true }) -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 
-jet.h('Search', { bg = jet.jbp.orange2, fg = jet.jbp.bg_high }) -- Last search patterns
-jet.h('IncSearch', { bg = jet.jbp.green2, fg = jet.jbp.bg_high }) -- Current search pattern when searching with / and with :s///
-jet.h('CurSearch', { bg = jet.jbp.blue, fg = jet.jbp.bg_high }) -- Current search match under the cursor
-jet.h('Substitute', { bg = jet.jbp.purple1, fg = jet.jbp.bg_base }) -- :substitute or :s///gc replacement text highlighting
+jet.h('Search', { bg = jet.jbp.orange2, fg = jet.jbp.clr_05 }) -- Last search patterns
+jet.h('IncSearch', { bg = jet.jbp.green2, fg = jet.jbp.clr_05 }) -- Current search pattern when searching with / and with :s///
+jet.h('CurSearch', { bg = jet.jbp.blue, fg = jet.jbp.clr_05 }) -- Current search match under the cursor
+jet.h('Substitute', { bg = jet.jbp.purple1, fg = jet.jbp.clr_05 }) -- :substitute or :s///gc replacement text highlighting
 
-jet.h('Special', { fg = jet.jbp.orange2 }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
+jet.h('Special', { fg = jet.jbp.orange2, undercurl = true }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
 jet.h('SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace.
 
-jet.h('Visual', { bg = jet.jbp.bg_high, nocombine = true }) -- Visual mode selection.
+jet.h('Visual', { bg = jet.jbp.clr_60, reverse = true, nocombine = true }) -- Visual mode selection.
 jet.h('VisualNOS', { link = 'Visual' }) -- Visual mode selection when vim is "Not Owning the Selection".
 
-jet.h('Whitespace', { fg = jet.jbp.fg_dim }) -- Listchars.
-jet.h('NonText', { fg = jet.jbp.dimmed2 }) -- Used in showbreak, listchars and virtualtext.
+jet.h('Whitespace', { fg = jet.jbp.clr_95 }) -- Listchars.
+jet.h('NonText', { link = 'Comment' }) -- Used in showbreak, listchars and virtualtext.
 
-jet.h('StatusLine', { bg = jet.jbp.bg_low, fg = jet.jbp.bg_low })
-jet.h('StatusLineBlue', { bg = jet.jbp.bg_low, fg = jet.jbp.blue })
+jet.h('StatusLine', { bg = jet.jbp.clr_30, fg = jet.jbp.clr_100 })
 jet.h('StatusLineNC', { link = 'EndOfBuffer' })
 -- -- WinBar WinBarNC
 
-jet.h('VertSplit', { bg = jet.jbp.bg_base, fg = jet.jbp.steel }) -- Used for splits, also used for completion menus
+jet.h('VertSplit', { fg = jet.jbp.clr_300 }) -- Used for splits, also used for completion menus
 jet.h('WinSeperator', { link = 'VertSplit' }) -- Separators between window splits.
 
--- jet.h('SpellBad', { link = 'Special' }) -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
--- jet.h('SpellCap', { link = 'Special' }) -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
--- jet.h('SpellLocal', { link = 'Special' }) -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
--- jet.h('SpellRare', { link = 'Special' }) -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
+jet.h('SpellBad', { link = 'Special' }) -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+jet.h('SpellCap', { link = 'Special' }) -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+jet.h('SpellLocal', { link = 'Special' }) -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+jet.h('SpellRare', { link = 'Special' }) -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
 
 -- jet.h('TabLine', {}) -- Tab pages line, not active tab page label.
 -- jet.h('TabLineFill', {}) -- TabLineFill	Tab pages line, where there are no labels.
@@ -122,6 +147,7 @@ jet.h('@parameter.reference', { link = '@parameter' }) -- References to paramete
 
 jet.h('@preproc', { fg = jet.jbp.purple1 }) -- Preprocessor #if, #else, #endif, etc.
 
+jet.h('@lsp.type.property', { fg = jet.jbp.green2 }) -- Object and struct fields.
 jet.h('@field', { fg = jet.jbp.green2 }) -- Object and struct fields.
 jet.h('@property', { link = '@field' })
 
@@ -147,9 +173,9 @@ jet.h('@type.builtin', { link = 'Type' }) -- Built-in types: `i32` in Rust.
 jet.h('@type.definition', { fg = jet.jbp.blue }) -- Type definitions, e.g. `typedef` in C.
 jet.h('@type.qualifier', { fg = jet.jbp.blue }) -- Qualifiers on types, e.g. `const` or `volatile` in C or `mut` in Rust.
 
-jet.h('Identifier', { fg = jet.jbp.plain }) -- (preferred) any variable name
+jet.h('Identifier', { fg = jet.jbp.clr_100 }) -- (preferred) any variable name
 
--- jet.h('@none', { undercurl = true })
+jet.h('@none', { undercurl = true })
 jet.h('@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
 
 jet.h('@variable.builtin', { fg = jet.jbp.red3 }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
@@ -264,7 +290,7 @@ jet.h('Operator', { fg = jet.jbp.red1 }) -- "sizeof", "+", "*"
 jet.h('@operator', { link = 'Operator' }) -- = or ==, Binary or unary operators: `+`, and also `->` and `*` in C.
 jet.h('@operator.svelte', { fg = jet.jbp.green2 })
 
-jet.h('Comment', { fg = jet.jbp.dimmed3, italic = true })
+jet.h('Comment', { fg = jet.jbp.clr_75, italic = true })
 jet.h('@comment', { link = 'Comment' }) -- Line comments and block comments.
 
 jet.h('SpecialChar', { link = 'Constant' }) -- Special character in a constant.
@@ -291,7 +317,7 @@ jet.h('DiagnosticUnderlineHint', { undercurl = true, sp = jet.jbp.blue })
 jet.h('DiagnosticUnderlineInfo', { undercurl = true, sp = jet.jbp.purple1 })
 jet.h('DiagnosticUnderlineWarn', { undercurl = true, sp = jet.jbp.yellow })
 
-jet.h('LspReferenceRead', { bg = jet.jbp.bg_high }) -- When you call a function or use a method/class
+jet.h('LspReferenceRead', { bg = jet.jbp.clr_200 }) -- When you call a function or use a method/class
 jet.h('LspReferenceText', { link = 'LspReferenceRead' })
 jet.h('LspReferenceWrite', { link = 'LspReferenceRead' })
 
@@ -302,5 +328,8 @@ jet.h('GitSignsDelete', { fg = jet.jbp.red2 })
 
 -- https://github.com/lvimuser/lsp-inlayhints.nvim
 jet.h('LspInlayHint', { bg = jet.jbp.bg_med, fg = jet.jbp.plain })
+
+-- https://github.com/lukas-reineke/indent-blankline.nvim
+jet.h('IndentBlanklineChar', { fg = jet.jbp.clr_30 })
 
 return jet
