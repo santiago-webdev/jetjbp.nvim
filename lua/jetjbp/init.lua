@@ -10,8 +10,8 @@ local jbp = {
    clr_yellow = '#F6C177',
    clr_bg_yellow = '#312718',
    clr_green_50 = '#9ece6a',
-   clr_green_70 = '#8bc4c4',
-
+   clr_goaway = '#8bc4c4',
+   clr_azure = '#3e8fb0',
    clr_blue = '#7ba1e3',
    clr_bg_blue = '#1b2332',
    clr_purple_50 = '#9D86B9',
@@ -45,9 +45,6 @@ local jbp = {
    clr_250 = '#d1d2f0',
    clr_300 = '#d9daf2',
 
-   clr_sky = '#7abfdb',
-   clr_azure = '#3e8fb0',
-
    -- clr_teal_l2 = '#b0d7d7',
    -- clr_teal_l1 = '#8bc4c4',
    -- clr_teal_bs = '#007f7f',
@@ -68,7 +65,7 @@ vim.api.nvim_set_hl(0, 'SignColumn', { bg = jbp.clr_20 }) -- Where linting and e
 vim.api.nvim_set_hl(0, 'ColorColumn', { bg = jbp.clr_25 })
 vim.api.nvim_set_hl(0, 'Conceal', {}) -- Syntax that is being affected by concealment.
 vim.api.nvim_set_hl(0, 'Directory', { fg = jbp.clr_blue }) -- Directories in NetRW.
-vim.api.nvim_set_hl(0, 'netrwExe', { fg = jbp.clr_green_70 }) -- Directories in NetRW.
+vim.api.nvim_set_hl(0, 'netrwExe', { fg = jbp.clr_goaway }) -- Directories in NetRW.
 vim.api.nvim_set_hl(0, 'ModeMsg', { bg = jbp.clr_65, fg = jbp.clr_250 }) -- The 'showmode' message (e.g., '-- INSERT --') uses this.
 vim.api.nvim_set_hl(0, 'MsgArea', { bg = jbp.clr_55, fg = jbp.clr_250 }) -- Area for messages and cmdline, `/` and `:`.
 vim.api.nvim_set_hl(0, 'MsgSeparator', { bg = jbp.clr_05, fg = jbp.clr_100 })
@@ -92,7 +89,7 @@ vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'VertSplit' }) -- Separators between
 
 -- hlgr search
 vim.api.nvim_set_hl(0, 'Search', { bg = jbp.clr_orange_70, fg = jbp.clr_05 }) -- Last search patterns
-vim.api.nvim_set_hl(0, 'IncSearch', { bg = jbp.clr_green_70, fg = jbp.clr_05 }) -- Current search pattern when searching with / and with :s///
+vim.api.nvim_set_hl(0, 'IncSearch', { bg = jbp.clr_goaway, fg = jbp.clr_05 }) -- Current search pattern when searching with / and with :s///
 vim.api.nvim_set_hl(0, 'CurSearch', { bg = jbp.clr_blue, fg = jbp.clr_05 }) -- Current search match under the cursor
 vim.api.nvim_set_hl(0, 'Substitute', { bg = jbp.clr_purple_50, fg = jbp.clr_05 }) -- :substitute or :s///gc replacement text highlighting
 
@@ -118,7 +115,7 @@ vim.api.nvim_set_hl(0, '@preproc', { fg = jbp.clr_purple_50 }) -- Preprocessor #
 vim.api.nvim_set_hl(0, '@lsp.type.property', { link = '@field' }) -- Object and struct fields.
 vim.api.nvim_set_hl(0, '@lsp.type.class', { fg = jbp.clr_yellow }) -- Object and struct fields.
 vim.api.nvim_set_hl(0, '@lsp.type.interface', { link = '@lsp.type.class' }) -- Object and struct fields.
-vim.api.nvim_set_hl(0, '@field', { fg = jbp.clr_green_70 }) -- Object and struct fields.
+vim.api.nvim_set_hl(0, '@field', { fg = jbp.clr_goaway }) -- Object and struct fields.
 vim.api.nvim_set_hl(0, '@property', { link = '@field' })
 -- vim.api.nvim_set_hl(0, '@lsp.type.property', { link = '@property' })
 -- vim.api.nvim_set_hl(0, '@lsp.type.property.lua', { fg = jbp.clr_sky }) -- Object and struct fields.
@@ -135,7 +132,6 @@ vim.api.nvim_set_hl(0, 'Delimiter', { fg = jbp.clr_80 }) -- . and ,
 vim.api.nvim_set_hl(0, '@punctuation.bracket', { link = 'Delimiter' }) -- () {} []
 vim.api.nvim_set_hl(0, '@punctuation.bracket.svelte', { fg = jbp.clr_red_70 }) -- () Brackets, braces, parentheses, etc.
 vim.api.nvim_set_hl(0, '@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
-vim.api.nvim_set_hl(0, '@punctuation.delimiter.css', { fg = jbp.clr_red_70 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
 vim.api.nvim_set_hl(0, '@punctuation.delimiter.markdown_inline', { fg = jbp.clr_purple_50 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
 
 vim.api.nvim_set_hl(0, '@punctuation.special', { fg = jbp.clr_orange_70 }) -- Special punctuation that doesn't fit into the previous categories.
@@ -162,7 +158,7 @@ vim.api.nvim_set_hl(0, 'Repeat', { fg = jbp.clr_purple_50 })
 vim.api.nvim_set_hl(0, '@repeat', { link = 'Repeat' })
 
 -- hlgr types int, long, char, etcp.
-vim.api.nvim_set_hl(0, 'Type', { fg = jbp.clr_sky })
+vim.api.nvim_set_hl(0, 'Type', { fg = jbp.clr_azure })
 vim.api.nvim_set_hl(0, 'Typedef', { fg = 'red' })
 vim.api.nvim_set_hl(0, '@type.builtin', { link = 'Type' }) -- Built-in types: `i32` in Rust.
 vim.api.nvim_set_hl(0, '@type.builtin.c', { fg = jbp.clr_purple_50 }) -- Built-in types: `i32` in Rust.
@@ -176,7 +172,7 @@ vim.api.nvim_set_hl(0, 'Identifier', { fg = jbp.clr_100 }) -- generic any variab
 vim.api.nvim_set_hl(0, '@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
 
 vim.api.nvim_set_hl(0, '@variable.builtin', { link = '@constant.builtin' }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
-vim.api.nvim_set_hl(0, '@variable.builtin.python', { fg = jbp.clr_sky }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
+vim.api.nvim_set_hl(0, '@variable.builtin.python', { fg = jbp.clr_goaway }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
 
 vim.api.nvim_set_hl(0, '@attribute', { fg = jbp.clr_red_80 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 
@@ -185,7 +181,7 @@ vim.api.nvim_set_hl(0, 'Boolean', { fg = jbp.clr_orange_70 })
 vim.api.nvim_set_hl(0, '@boolean', { link = 'Boolean' }) -- Boolean literals: `True` and `False` in Python.
 
 -- hlgr strings
-vim.api.nvim_set_hl(0, 'String', { fg = jbp.clr_green_70 })
+vim.api.nvim_set_hl(0, 'String', { fg = jbp.clr_goaway })
 vim.api.nvim_set_hl(0, '@string', { link = 'String' }) -- String literals.
 -- vim.api.nvim_set_hl(0, '@string.svelte', { link = 'Comment' }) -- String literals.
 vim.api.nvim_set_hl(0, '@string.regex', { fg = jbp.clr_orange_70 }) -- Regular expression literals.
@@ -223,7 +219,7 @@ vim.api.nvim_set_hl(0, '@text.note', { fg = jbp.clr_blue }) -- NOTE: INUPPERCASE
 vim.api.nvim_set_hl(0, '@text.warning', { link = 'Todo' }) -- Text representation of a warning note. This affecs @todo hl group for some reason
 vim.api.nvim_set_hl(0, '@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a danger note.
 vim.api.nvim_set_hl(0, '@text.strong', { bold = true, fg = jbp.clr_yellow }) -- FIXME Text representation of a danger note.
-vim.api.nvim_set_hl(0, '@text.emphasis', { italic = true, fg = jbp.clr_green_70 }) -- FIXME Text representation of a danger note.
+vim.api.nvim_set_hl(0, '@text.emphasis', { italic = true, fg = jbp.clr_goaway }) -- FIXME Text representation of a danger note.
 vim.api.nvim_set_hl(0, '@text.strike', { strikethrough = true, fg = jbp.clr_blue }) -- FIXME Text representation of a danger note.
 
 -- vim.api.nvim_set_hl(0, 'TSDebug', {}) -- TODO(santigo-zero): Fix this, where it's being used I don't know. Debugging statements.
@@ -274,7 +270,7 @@ vim.api.nvim_set_hl(0, '@keyword.function', { fg = jbp.clr_purple_50, italic = t
 vim.api.nvim_set_hl(0, '@keyword.operator', { fg = jbp.clr_purple_50 }) -- Unary and binary operators that are English words: `and`, `or` in Python and Lua; `sizeof` in C.
 vim.api.nvim_set_hl(0, '@keyword.return', { fg = jbp.clr_purple_70 }) -- Keywords like `return` and `yield`.
 
-vim.api.nvim_set_hl(0, 'Label', { fg = jbp.clr_green_70 }) -- case, default, etc.
+vim.api.nvim_set_hl(0, 'Label', { fg = jbp.clr_goaway }) -- case, default, etc.
 vim.api.nvim_set_hl(0, '@label', { link = 'Label' }) -- GOTO labels: `label:` in C, and `::label::` in Lua, and *thing* in help pages or the name of codeblocks in lua.
 
 vim.api.nvim_set_hl(0, 'Method', { fg = jbp.clr_blue })
@@ -287,7 +283,7 @@ vim.api.nvim_set_hl(0, 'Macro', { fg = jbp.clr_red_50 })
 -- constructors calls and definitions start with a capital letter.
 vim.api.nvim_set_hl(0, '@constructor', { fg = jbp.clr_yellow, bold = true }) -- Object and struct fields.
 vim.api.nvim_set_hl(0, '@constructor.lua', {}) -- Object and struct fields.
-vim.api.nvim_set_hl(0, '@namespace', { fg = jbp.clr_sky }) -- identifiers referring to modules and namespaces.
+vim.api.nvim_set_hl(0, '@namespace', { fg = jbp.clr_goaway }) -- identifiers referring to modules and namespaces.
 
 vim.api.nvim_set_hl(0, 'Character', { fg = jbp.clr_red_80 }) -- A character constant: 'c', '\n'
 vim.api.nvim_set_hl(0, '@character', { link = 'Character' }) -- Character literals: `'a'` in C and .
@@ -310,7 +306,7 @@ vim.api.nvim_set_hl(0, 'SpecialChar', { link = 'Constant' }) -- special characte
 vim.api.nvim_set_hl(0, 'SpecialComment', { link = 'SpecialChar' }) -- special things inside a comment.
 
 vim.api.nvim_set_hl(0, 'DiffAdd', { fg = jbp.clr_blue })
-vim.api.nvim_set_hl(0, 'DiffChange', { fg = jbp.clr_green_70 })
+vim.api.nvim_set_hl(0, 'DiffChange', { fg = jbp.clr_goaway })
 vim.api.nvim_set_hl(0, 'DiffDelete', { fg = jbp.clr_red_50 })
 vim.api.nvim_set_hl(0, 'DiffText', { fg = jbp.clr_150 })
 
@@ -336,6 +332,11 @@ vim.api.nvim_set_hl(0, 'DiagnosticUnderlineWarn', { undercurl = true, sp = jbp.c
 vim.api.nvim_set_hl(0, 'LspReferenceRead', { bg = jbp.clr_200 }) -- When you call a function or use a method/class
 vim.api.nvim_set_hl(0, 'LspReferenceText', { link = 'LspReferenceRead' })
 vim.api.nvim_set_hl(0, 'LspReferenceWrite', { link = 'LspReferenceRead' })
+
+-- css
+vim.api.nvim_set_hl(0, '@punctuation.delimiter.css', { fg = jbp.clr_red_70 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
+vim.api.nvim_set_hl(0, '@operator.css', { fg = jbp.clr_purple_70 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
+vim.api.nvim_set_hl(0, '@field.css', { fg = jbp.clr_green_50 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
 
 -- https://github.com/lewis6991/gitsigns.nvim
 vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = jbp.clr_purple_50 })
