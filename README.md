@@ -1,5 +1,5 @@
 # jetjbp.nvim
-A basic colorscheme for neovim.
+A basic color scheme for neovim made to be readable
 
 ## Suggestions
 If you have any suggestion feel free to open
@@ -17,17 +17,23 @@ can get the font with the icons seen in the screenshot from the nerd fonts repo
 ## Supported plugins
 I created this colorscheme for personal use so it doesn't support that many
 plugins as of right now:
-- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [nvim-semantic-tokens](https://github.com/theHamsta/nvim-semantic-tokens)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
 ## Install
 If you decided that you want to try it out:
 ```lua
--- Using packer
+-- packer
 use 'santigo-zero/jetjbp.nvim' -- jetjbp.nvim
+```
+
+```lua
+-- lazy
+{
+  "santigo-zero/jetjbp.nvim",
+},
 ```
 
 ## Inspired by
 [rose-pine](https://github.com/rose-pine/neovim)
+[onedark.nvim](https://github.com/ChristianChiarulli/onedark.nvim)
