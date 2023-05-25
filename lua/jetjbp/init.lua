@@ -19,8 +19,9 @@ local jbp = {
    orange1 = '#FF9E64',
    orange2 = '#FAB387',
    yellow = '#F6C177',
-   green1 = '#9ece6a', -- Yes I took this color from tokyonight.
-   green2 = '#7ebdb6', -- goaway green
+   green1 = '#9ece6a',
+   green2 = '#8bc4c4',
+
    blue = '#7ba1e3',
    teal = '#3e8fb0',
    purple1 = '#9D86B9',
@@ -57,6 +58,18 @@ local jbp = {
    clr_200 = '#c8c9ed',
    clr_250 = '#d1d2f0',
    clr_300 = '#d9daf2',
+
+   clr_marsala_l2 = '#d3b5b5',
+   clr_marsala_l1 = '#be9191',
+   clr_marsala_bs = '#a05e5e',
+   clr_marsala_d1 = '#905454',
+   clr_marsala_d2 = '#804b4b',
+
+   clr_teal_l2 = '#b0d7d7',
+   clr_teal_l1 = '#8bc4c4',
+   clr_teal_bs = '#007f7f',
+   clr_teal_d1 = '#006566',
+   clr_teal_d2 = '#004c4c',
 }
 
 -- hlgr base
@@ -64,24 +77,24 @@ vim.api.nvim_set_hl(0, 'Normal', { fg = jbp.clr_100, bg = jbp.clr_20 })
 vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
 vim.api.nvim_set_hl(0, 'NormalNC', { bg = jbp.clr_20 })
 vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = jbp.clr_25, fg = jbp.clr_85 }) -- Filler lines (~) after the end of the buffer.
-vim.api.nvim_set_hl(0, 'MatchParen', { bg = jbp.orange1 })
+vim.api.nvim_set_hl(0, 'MatchParen', { bg = jbp.clr_300, fg = jbp.clr_05 })
 vim.api.nvim_set_hl(0, 'LineNr', { fg = jbp.clr_65 }) -- Line number column, gutter.
 vim.api.nvim_set_hl(0, 'LineNrAbove', { link = 'LineNr' })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { link = 'LineNr' })
-vim.api.nvim_set_hl(0, 'SignColumn', { bg = jbp.clr_20 }) -- Where linting and errors popup
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = jbp.clr_20 }) -- Where linting and errors popup.
 vim.api.nvim_set_hl(0, 'ColorColumn', { bg = jbp.clr_25 })
-vim.api.nvim_set_hl(0, 'Conceal', {})
+vim.api.nvim_set_hl(0, 'Conceal', {}) -- Syntax that is being affected by concealment.
 vim.api.nvim_set_hl(0, 'Directory', { fg = jbp.blue }) -- Directories in NetRW.
 vim.api.nvim_set_hl(0, 'netrwExe', { fg = jbp.green2 }) -- Directories in NetRW.
-vim.api.nvim_set_hl(0, 'ModeMsg', { fg = jbp.clr_90 }) -- The 'showmode' message (e.g., '-- INSERT --') uses this.
-vim.api.nvim_set_hl(0, 'MsgArea', { link = 'ModeMsg' }) -- Area for messages and cmdline, `/` and `:`.
-vim.api.nvim_set_hl(0, 'MsgSeparator', { link = 'ModeMsg' })
+vim.api.nvim_set_hl(0, 'ModeMsg', { bg = jbp.clr_65, fg = jbp.clr_250 }) -- The 'showmode' message (e.g., '-- INSERT --') uses this.
+vim.api.nvim_set_hl(0, 'MsgArea', { bg = jbp.clr_55, fg = jbp.clr_250 }) -- Area for messages and cmdline, `/` and `:`.
+vim.api.nvim_set_hl(0, 'MsgSeparator', { bg = jbp.clr_05, fg = jbp.clr_100 })
 vim.api.nvim_set_hl(0, 'MoreMsg', { link = 'ModeMsg' }) -- |more-prompt|
 vim.api.nvim_set_hl(0, 'Pmenu', { bg = jbp.clr_40, fg = jbp.clr_95 }) -- The non-selected entries of a completion menu, normal item.
 vim.api.nvim_set_hl(0, 'PmenuSel', { bg = jbp.clr_55, fg = jbp.clr_300, blend = 0 }) -- Selected item.
 vim.api.nvim_set_hl(0, 'PmenuSbar', { bg = jbp.clr_50 }) -- Scrollbar
 vim.api.nvim_set_hl(0, 'PmenuThumb', { bg = jbp.clr_80 }) -- Thumb of the scrollbar.
-vim.api.nvim_set_hl(0, 'Question', { fg = jbp.clr_95 }) -- |hit-enter| prompt and yes/no questions.
+vim.api.nvim_set_hl(0, 'Question', { link = 'ModeMsg' }) -- |hit-enter| prompt and yes/no questions.
 vim.api.nvim_set_hl(0, 'QuickFixLine', { bg = jbp.orange2, fg = jbp.clr_95, nocombine = true }) -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 vim.api.nvim_set_hl(0, 'Special', { fg = jbp.orange2, undercurl = false }) -- Any special symbol, sometimes it could be {} curly braces/brackets and also `NOTE:`
 vim.api.nvim_set_hl(0, 'SpecialKey', { link = 'Special' }) -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace.
@@ -89,9 +102,10 @@ vim.api.nvim_set_hl(0, 'Visual', { bg = jbp.clr_60, reverse = true, nocombine = 
 vim.api.nvim_set_hl(0, 'VisualNOS', { link = 'Visual' }) -- Visual mode selection when vim is "Not Owning the Selection".
 vim.api.nvim_set_hl(0, 'Whitespace', { fg = jbp.clr_95 }) -- Listchars.
 vim.api.nvim_set_hl(0, 'NonText', { link = 'Comment' }) -- Used in showbreak, listchars and virtualtext.
--- -- WinBar WinBarNC
 vim.api.nvim_set_hl(0, 'VertSplit', { fg = jbp.clr_300 }) -- Used for splits, also used for completion menus
 vim.api.nvim_set_hl(0, 'WinSeperator', { link = 'VertSplit' }) -- Separators between window splits.
+vim.api.nvim_set_hl(0, 'WinBar', { link = 'VertSplit' }) -- Separators between window splits.
+vim.api.nvim_set_hl(0, 'WinBarNC', { link = 'VertSplit' }) -- Separators between window splits.
 
 -- hlgr search
 vim.api.nvim_set_hl(0, 'Search', { bg = jbp.orange2, fg = jbp.clr_05 }) -- Last search patterns
@@ -111,7 +125,7 @@ vim.api.nvim_set_hl(0, 'SpellRare', { link = 'Special' }) -- Word that is recogn
 -- vim.api.nvim_set_hl(0, 'WildMenu', {}) -- Current match in 'wildmenu' completion.
 -- vim.api.nvim_set_hl(0, 'WinBar', {}) -- Window bar of current window.
 -- vim.api.nvim_set_hl(0, 'WinBarNC', {}) -- Window bar of not-current windows.
-vim.api.nvim_set_hl(0, 'Menu', { fg = jbp.text }) -- Current font, background and foreground colors of the menus.  Also used for the toolbar.  Applicable highlight arguments: font, guibg, guifg.
+vim.api.nvim_set_hl(0, 'Menu', { fg = 'red' }) -- Current font, background and foreground colors of the menus.  Also used for the toolbar.  Applicable highlight arguments: font, guibg, guifg.
 vim.api.nvim_set_hl(0, 'Scrollbar', { fg = jbp.steel }) -- Current background and foreground of the main window's scrollbars.  Applicable highlight arguments: guibg, guifg.
 vim.api.nvim_set_hl(0, 'Tooltip', { link = 'Menu' }) -- Current font, background and foreground of the tooltips.  Applicable highlight arguments: font, guibg, guifg.
 vim.api.nvim_set_hl(0, '@parameter', { fg = jbp.red3 }) -- Parameters of a function.
@@ -120,12 +134,22 @@ vim.api.nvim_set_hl(0, '@preproc', { fg = jbp.purple1 }) -- Preprocessor #if, #e
 vim.api.nvim_set_hl(0, '@lsp.type.property', { fg = jbp.green2 }) -- Object and struct fields.
 vim.api.nvim_set_hl(0, '@field', { fg = jbp.green2 }) -- Object and struct fields.
 vim.api.nvim_set_hl(0, '@property', { link = '@field' })
+vim.api.nvim_set_hl(0, '@lsp.type.property', { link = '@property' })
+
+-- hlgr float numbers hlgr floating numbers
 vim.api.nvim_set_hl(0, 'Float', { fg = jbp.red1 }) -- A floating point constant: 2.3e10
 vim.api.nvim_set_hl(0, '@float', { link = 'Float' }) -- Floating-point number literals.
+
+-- hlgr floating windows hlgr floating pans
+vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Pmenu' })
+vim.api.nvim_set_hl(0, 'FloatTitle', { link = 'PmenuSel' })
+
 vim.api.nvim_set_hl(0, 'Delimiter', { fg = jbp.yellow }) -- . and ,
 vim.api.nvim_set_hl(0, '@punctuation.bracket', { fg = jbp.dimmed3 }) -- () Brackets, braces, parentheses, etc.
 vim.api.nvim_set_hl(0, '@punctuation.bracket.svelte', { fg = jbp.red2 }) -- () Brackets, braces, parentheses, etc.
 vim.api.nvim_set_hl(0, '@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
+vim.api.nvim_set_hl(0, '@punctuation.delimiter.markdown_inline', { fg = jbp.purple1 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
+
 vim.api.nvim_set_hl(0, '@punctuation.special', { fg = jbp.orange1 }) -- Special punctuation that doesn't fit into the previous categories.
 vim.api.nvim_set_hl(0, 'StorageClass', { fg = jbp.orange1 })
 vim.api.nvim_set_hl(0, '@storageclass', { link = 'StorageClass' }) -- Keywords that affect how a variable is stored: `static`, `comptime`, `extern`, etc. This variable doesn't work
@@ -149,42 +173,49 @@ vim.api.nvim_set_hl(0, 'StatusLineNC', { link = 'EndOfBuffer' })
 vim.api.nvim_set_hl(0, 'Repeat', { fg = jbp.purple1 })
 vim.api.nvim_set_hl(0, '@repeat', { link = 'Repeat' })
 
-vim.api.nvim_set_hl(0, 'Type', { fg = jbp.teal }) -- (preferred) int, long, char, etcp.
-vim.api.nvim_set_hl(0, '@type', { link = 'Type' }) -- Type (and class) definitions and annotations.
+-- hlgr types int, long, char, etcp.
+vim.api.nvim_set_hl(0, 'Type', { fg = jbp.clr_teal_bs })
+vim.api.nvim_set_hl(0, 'Typedef', { fg = 'red' })
 vim.api.nvim_set_hl(0, '@type.builtin', { link = 'Type' }) -- Built-in types: `i32` in Rust.
+vim.api.nvim_set_hl(0, '@type.builtin.c', { fg = jbp.purple1 }) -- Built-in types: `i32` in Rust.
 vim.api.nvim_set_hl(0, '@type.definition', { fg = jbp.blue }) -- Type definitions, e.g. `typedef` in C.
 vim.api.nvim_set_hl(0, '@type.qualifier', { fg = jbp.blue }) -- Qualifiers on types, e.g. `const` or `volatile` in C or `mut` in Rust.
+vim.api.nvim_set_hl(0, '@type', { link = 'Type' }) -- Type (and class) definitions and annotations.
 
-vim.api.nvim_set_hl(0, 'Identifier', { fg = jbp.clr_100 }) -- (preferred) any variable name
-
+-- vim.api.nvim_set_hl(0, '@symbol', { fg = 'red', bg = 'blue' }) -- Identifiers referring to symbols or atoms.
 -- vim.api.nvim_set_hl(0, '@none', { undercurl = true })
+vim.api.nvim_set_hl(0, 'Identifier', { fg = jbp.clr_100 }) -- generic any variable name
 vim.api.nvim_set_hl(0, '@variable', { link = 'Identifier' }) -- Variable names that don't fit into other categories, like `vim` in vim.api.
 
-vim.api.nvim_set_hl(0, '@variable.builtin', { fg = jbp.red3 }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
+vim.api.nvim_set_hl(0, '@variable.builtin', { link = '@constant.builtin' }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
 vim.api.nvim_set_hl(0, '@variable.builtin.python', { fg = jbp.teal }) -- Variable names defined by the language: `this` or `self` in Javascript and Python.
 
 vim.api.nvim_set_hl(0, '@attribute', { fg = jbp.red3 }) -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 
+-- hlgr booleans
 vim.api.nvim_set_hl(0, 'Boolean', { fg = jbp.orange2 })
 vim.api.nvim_set_hl(0, '@boolean', { link = 'Boolean' }) -- Boolean literals: `True` and `False` in Python.
 
-vim.api.nvim_set_hl(0, 'String', { fg = jbp.yellow })
+-- hlgr strings
+vim.api.nvim_set_hl(0, 'String', { fg = jbp.green2 })
 vim.api.nvim_set_hl(0, '@string', { link = 'String' }) -- String literals.
 -- vim.api.nvim_set_hl(0, '@string.svelte', { link = 'Comment' }) -- String literals.
 vim.api.nvim_set_hl(0, '@string.regex', { fg = jbp.orange2 }) -- Regular expression literals.
 vim.api.nvim_set_hl(0, '@string.escape', { fg = jbp.orange2 }) -- Escape characters within a string: `\n`, `\t`, etc.
 vim.api.nvim_set_hl(0, '@string.special', { link = 'Special' }) -- Strings with special meaning that don't fit into the previous categories.
 
-vim.api.nvim_set_hl(0, '@symbol', {}) -- Identifiers referring to symbols or atoms.
-
+-- hlgr numbers
 vim.api.nvim_set_hl(0, 'Number', { fg = jbp.orange2 })
 vim.api.nvim_set_hl(0, '@number', { link = 'Number' }) -- Numeric literals that don't fit into other categories.
 
+-- hlgr constants
 vim.api.nvim_set_hl(0, 'Constant', { fg = jbp.red1 }) -- NOTE: to self, this changes the name in -> TODO(santigo-zero):
 vim.api.nvim_set_hl(0, '@constant', { fg = jbp.red3 }) -- Constants identifiers. These might not be semantically constant.  E.g. uppercase variables in Python and emmylua annotations in lua
-vim.api.nvim_set_hl(0, '@constant.builtin', { fg = jbp.orange2 }) -- Built-in constant values: `nil` in Lua.
+vim.api.nvim_set_hl(0, '@constant.builtin', { bg = jbp.bg_red1, fg = jbp.red1 }) -- built-in constant values: `nil` in Lua, undefined and null in Javascript.
 vim.api.nvim_set_hl(0, '@constant.macro', { fg = jbp.red1 }) -- Constants defined by macros: `NULL` in C.
+vim.api.nvim_set_hl(0, '@lsp.type.enumMember', { link = 'Constant' }) -- Numeric literals that don't fit into other categories.
 
+-- hlgr if statements if else switch
 vim.api.nvim_set_hl(0, 'Conditional', { fg = jbp.purple1 }) -- if, then, else, endif, switch, etc.
 vim.api.nvim_set_hl(0, '@conditional', { link = 'Conditional' }) -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
 
@@ -193,17 +224,22 @@ vim.api.nvim_set_hl(0, 'ErrorMsg', { link = 'Error' }) -- Error messages in the 
 vim.api.nvim_set_hl(0, '@error', { link = 'ErrorMsg' }) -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
 vim.api.nvim_set_hl(0, 'WarningMsg', { fg = jbp.yellow }) -- Warning messages.
 
+-- hlgr todo
 vim.api.nvim_set_hl(0, 'Todo', { fg = jbp.purple1, bold = true })
 vim.api.nvim_set_hl(0, '@todo', { link = 'Todo' }) -- TODO(santigo-zero): Test.
+vim.api.nvim_set_hl(0, '@text.todo', { link = 'Todo' }) -- TODO(santigo-zero): Test.
 vim.api.nvim_set_hl(0, '@text.todo.comment', { link = 'Todo' }) -- TODO(santigo-zero): Test.
 
 vim.api.nvim_set_hl(0, '@text', { fg = jbp.text })
 vim.api.nvim_set_hl(0, '@text.note', { fg = jbp.blue }) -- NOTE: INUPPERCASE: -- The italic = true affects @todo for some reason
 vim.api.nvim_set_hl(0, '@text.warning', { link = 'Todo' }) -- Text representation of a warning note. This affecs @todo hl group for some reason
 vim.api.nvim_set_hl(0, '@text.danger', { link = 'WarningMsg' }) -- FIXME Text representation of a danger note.
+vim.api.nvim_set_hl(0, '@text.strong', { bold = true, fg = jbp.yellow }) -- FIXME Text representation of a danger note.
+vim.api.nvim_set_hl(0, '@text.emphasis', { italic = true, fg = jbp.green2 }) -- FIXME Text representation of a danger note.
+vim.api.nvim_set_hl(0, '@text.strike', { strikethrough = true, fg = jbp.blue }) -- FIXME Text representation of a danger note.
 
 -- vim.api.nvim_set_hl(0, 'TSDebug', {}) -- TODO(santigo-zero): Fix this, where it's being used I don't know. Debugging statements.
--- vim.api.nvim_set_hl(0, 'TSDefine', {}) -- Preprocessor #define statements.
+vim.api.nvim_set_hl(0, '@define', { fg = jbp.blue }) -- Preprocessor #define statements.
 vim.api.nvim_set_hl(0, '@tag', { fg = jbp.purple1 }) -- Tags like HTML tag names.
 vim.api.nvim_set_hl(0, '@tag.attribute', { fg = jbp.green2 }) -- HTML tag attributes like classes and ids
 vim.api.nvim_set_hl(0, '@tag.delimiter', { fg = jbp.teal }) -- Tag delimiters like `<` `>` `/`.
@@ -220,7 +256,7 @@ vim.api.nvim_set_hl(0, '@text.reference', { fg = jbp.red1 }) -- Help pages: Foot
 -- vim.api.nvim_set_hl(0, 'TSEnvironment', {}) -- Text environments of markup languages.
 -- vim.api.nvim_set_hl(0, 'TSEnvironmentName', {}) -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
 
--- Zsh
+-- hlgr zsh
 vim.api.nvim_set_hl(0, 'zshSubst', { fg = jbp.red1 })
 vim.api.nvim_set_hl(0, 'zshDeref', { fg = jbp.red1 })
 vim.api.nvim_set_hl(0, 'zshString', { link = 'String' })
@@ -228,19 +264,21 @@ vim.api.nvim_set_hl(0, 'zshShortDeref', { link = 'Constant' })
 vim.api.nvim_set_hl(0, 'zshPreProc', { link = 'Comment' })
 vim.api.nvim_set_hl(0, 'zshTypes', { link = 'zshKeyword' })
 
-vim.api.nvim_set_hl(0, 'Exception', { fg = jbp.purple1 }) -- try, catch, throw
+-- hlgr errors hlgr try hlgr throw
+vim.api.nvim_set_hl(0, 'Exception', { bg = jbp.bg_purple1, fg = jbp.purple1 }) -- try, catch, throw
 vim.api.nvim_set_hl(0, '@exception', { link = 'Exception' }) -- Exception related keywords: `try`, `except`, `finally` in Python.
 
+-- hlgr functions
 vim.api.nvim_set_hl(0, 'Function', { fg = jbp.purple2 }) -- Function name (also: methods for classes)
 vim.api.nvim_set_hl(0, '@function', { link = 'Function' }) -- Function definitions.
 vim.api.nvim_set_hl(0, '@function.macro', { fg = jbp.purple1 }) -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-
 vim.api.nvim_set_hl(0, '@function.call', { fg = jbp.blue }) -- Function calls.
 vim.api.nvim_set_hl(0, '@function.builtin', { fg = jbp.purple2 }) -- Built-in functions: `print` in Lua.
 
-vim.api.nvim_set_hl(0, 'Include', { fg = jbp.blue }) -- from ... import ...
+vim.api.nvim_set_hl(0, 'Include', { fg = jbp.blue }) -- import { ... } from '...' or from ... import ... or #include in C
 vim.api.nvim_set_hl(0, '@include', { link = 'Include' }) -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
 
+-- hlgr keywords
 vim.api.nvim_set_hl(0, 'Keyword', { fg = jbp.purple1 }) -- Any other keyword
 vim.api.nvim_set_hl(0, '@keyword', { link = 'Keyword' }) -- Keywords that don't fit into other categories.
 -- vim.api.nvim_set_hl(0, '@keyword.svelte', { fg = jbp.red2 }) -- Keywords that don't fit into other categories.
@@ -249,7 +287,7 @@ vim.api.nvim_set_hl(0, '@keyword.operator', { fg = jbp.red1 }) -- Unary and bina
 vim.api.nvim_set_hl(0, '@keyword.return', { fg = jbp.purple2 }) -- Keywords like `return` and `yield`.
 
 vim.api.nvim_set_hl(0, 'Label', { fg = jbp.green2 }) -- case, default, etc.
-vim.api.nvim_set_hl(0, '@label', { link = 'Label' }) -- GOTO labels: `label:` in C, and `::label::` in Lua, and *thing* in help pages.
+vim.api.nvim_set_hl(0, '@label', { link = 'Label' }) -- GOTO labels: `label:` in C, and `::label::` in Lua, and *thing* in help pages or the name of codeblocks in lua.
 
 vim.api.nvim_set_hl(0, 'Method', { fg = jbp.blue })
 vim.api.nvim_set_hl(0, '@method', { link = 'Method' }) -- Method definitions.
