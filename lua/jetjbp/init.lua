@@ -150,6 +150,7 @@ vim.api.nvim_set_hl(0, 'Delimiter', { fg = jbp.clr_80 }) -- . and ,
 vim.api.nvim_set_hl(0, '@punctuation.bracket', { link = 'Delimiter' }) -- () {} []
 vim.api.nvim_set_hl(0, '@punctuation.bracket.svelte', { fg = jbp.clr_red_50 }) -- () Brackets, braces, parentheses, etc.
 vim.api.nvim_set_hl(0, '@punctuation.delimiter', { link = 'Delimiter' }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
+vim.api.nvim_set_hl(0, '@lsp.typemod.variable.definition', { link = '@punctuation.delimiter' })
 vim.api.nvim_set_hl(0, '@punctuation.delimiter.markdown_inline', { fg = jbp.clr_purple_50 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
 
 vim.api.nvim_set_hl(0, '@punctuation.special', { fg = jbp.clr_green_50 }) -- Special punctuation that doesn't fit into the previous categories.
