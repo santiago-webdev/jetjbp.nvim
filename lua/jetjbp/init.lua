@@ -72,7 +72,6 @@ local jbp = {
 
 -- hlgr base
 vim.api.nvim_set_hl(0, 'Normal', { fg = jbp.clr_100, bg = jbp.clr_20 })
-vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
 vim.api.nvim_set_hl(0, 'NormalNC', { bg = jbp.clr_20 })
 vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = jbp.clr_25, fg = jbp.clr_85 }) -- Filler lines (~) after the end of the buffer.
 vim.api.nvim_set_hl(0, 'MatchParen', { bg = jbp.clr_300, fg = jbp.clr_05 })
@@ -143,8 +142,9 @@ vim.api.nvim_set_hl(0, 'Float', { fg = jbp.clr_red_40 }) -- A floating point con
 vim.api.nvim_set_hl(0, '@float', { link = 'Float' }) -- Floating-point number literals.
 
 -- hlgr floating windows hlgr floating pans
-vim.api.nvim_set_hl(0, 'FloatBorder', { link = 'Pmenu' })
-vim.api.nvim_set_hl(0, 'FloatTitle', { link = 'PmenuSel' })
+vim.api.nvim_set_hl(0, 'FloatBorder', { bg = jbp.clr_60, fg = jbp.clr_90 })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = jbp.clr_60 })
+vim.api.nvim_set_hl(0, 'FloatTitle', { bg = jbp.clr_60, fg = jbp.clr_300 })
 
 vim.api.nvim_set_hl(0, 'Delimiter', { fg = jbp.clr_80 }) -- . and ,
 vim.api.nvim_set_hl(0, '@punctuation.bracket', { link = 'Delimiter' }) -- () {} []
