@@ -354,10 +354,11 @@ vim.api.nvim_set_hl(0, 'LspReferenceText', { link = 'LspReferenceRead' })
 vim.api.nvim_set_hl(0, 'LspReferenceWrite', { link = 'LspReferenceRead' })
 
 -- css
-vim.api.nvim_set_hl(0, '@punctuation.delimiter.css', { fg = jbp.clr_red_50 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
-vim.api.nvim_set_hl(0, '@operator.css', { fg = jbp.clr_purple_40 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
-vim.api.nvim_set_hl(0, '@field.css', { fg = jbp.clr_green_50 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
-vim.api.nvim_set_hl(0, '@type.css', { fg = jbp.clr_purple_50 }) -- Punctuation delimiters: Periods, commas, semicolons, etc.
+vim.api.nvim_set_hl(0, '@punctuation.delimiter.css', { fg = jbp.clr_red_50 })
+vim.api.nvim_set_hl(0, '@operator.css', { fg = jbp.clr_purple_40 })
+vim.api.nvim_set_hl(0, '@field.css', { fg = jbp.clr_green_50 })
+vim.api.nvim_set_hl(0, '@type.css', { fg = jbp.clr_green_50 })
+vim.api.nvim_set_hl(0, '@type.definition.css', { fg = jbp.clr_orange_70 })
 
 -- https://github.com/lewis6991/gitsigns.nvim
 vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = jbp.clr_purple_50 })
