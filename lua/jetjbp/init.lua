@@ -158,6 +158,7 @@ h(0, '@punctuation.delimiter', { link = 'Delimiter' })
 h(0, '@lsp.typemod.variable.definition', { link = '@punctuation.delimiter' })
 -- Punctuation delimiters: Periods, commas, semicolons, etc.
 h(0, '@punctuation.delimiter.markdown_inline', { fg = jbp.purple_mid })
+h(0, '@text.literal', { link = '@punctuation.delimiter.markdown_inline' })
 
 -- Special punctuation that doesn't fit into the previous categories.
 h(0, '@punctuation.special', { fg = jbp.green_mid })
@@ -228,7 +229,7 @@ h(0, 'Number', { fg = jbp.orange_high })
 h(0, '@number', { link = 'Number' }) -- Numeric literals that don't fit into other categories.
 
 -- hlgr constants
--- NOTE: to self, this changes the name in -> TODO(santigo-zero):
+-- NOTE: to self, this changes the name in -> TODO(santiagogonzalez-dev):
 h(0, 'Constant', { fg = jbp.red_mid })
 -- Constants identifiers. These might not be semantically constant.
 -- E.g. uppercase variables in Python and emmylua annotations in lua
@@ -254,9 +255,9 @@ h(0, 'WarningMsg', { fg = jbp.yellow }) -- Warning messages.
 
 -- hlgr todo
 h(0, 'Todo', { fg = jbp.purple_mid, bold = true })
-h(0, '@todo', { link = 'Todo' }) -- TODO(santigo-zero): Test.
-h(0, '@text.todo', { link = 'Todo' }) -- TODO(santigo-zero): Test.
-h(0, '@text.todo.comment', { link = 'Todo' }) -- TODO(santigo-zero): Test.
+h(0, '@todo', { link = 'Todo' }) -- TODO(santiagogonzalez-dev): Test.
+h(0, '@text.todo', { link = 'Todo' })
+h(0, '@text.todo.comment', { link = 'Todo' })
 
 h(0, '@text', { fg = jbp.inv_600 })
 -- NOTE: INUPPERCASE: -- The italic = true affects @todo for some reason
@@ -271,7 +272,7 @@ h(0, '@text.emphasis', { italic = true, fg = jbp.green_goaway })
 -- FIXME Text representation of a danger note.
 h(0, '@text.strike', { strikethrough = true, fg = jbp.blue_mid })
 
--- TODO(santigo-zero): Fix this, where it's being used I don't know. Debugging statements.
+-- TODO(santiagogonzalez-dev): Fix this, where it's being used I don't know. Debugging statements.
 -- h(0, 'TSDebug', {})
 h(0, '@define', { fg = jbp.blue_mid }) -- Preprocessor #define statements.
 h(0, '@tag', { fg = jbp.purple_mid }) -- Tags like HTML tag names.
